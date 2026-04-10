@@ -25,7 +25,7 @@ export default function CTAFinal() {
           href={WA_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-white text-teal-dark font-900 text-lg px-12 py-6 rounded-full shadow-2xl hover:-translate-y-1 hover:shadow-white/30 transition-all duration-200"
+          className="inline-block bg-white text-teal-dark font-900 font-semibold text-lg px-12 py-6 rounded-full shadow-2xl hover:-translate-y-1 hover:shadow-white/30 transition-all duration-200"
         >
           QUERO INSTALAR MINHA INTERNET AGORA
         </a>

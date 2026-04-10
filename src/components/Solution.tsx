@@ -119,7 +119,7 @@ export default function Solution() {
           {/* Bottom note */}
           <div className="bg-gradient-to-r from-teal to-[#00E0C0] rounded-2xl px-6 py-4 text-white text-center">
             <p className="font-800 text-sm">
-              É ideal para trabalho, estudo, streaming e jogos — tudo ao mesmo tempo.
+              É ideal para trabalho, estudo, streaming e jogos. Tudo ao mesmo tempo.
             </p>
           </div>
         </div>
