@@ -1,35 +1,38 @@
-import { useEffect, useState } from 'react'
-import { WA_LINK } from '../App'
+import { useEffect, useState } from "react";
+import { WA_LINK } from "../App";
+import logo from "../assets/logo.png";
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 40)
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    const handleScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-bg/95 backdrop-blur-md shadow-md'
-          : 'bg-bg/80 backdrop-blur-sm'
+          ? "bg-bg/95 backdrop-blur-md shadow-md"
+          : "bg-bg/80 backdrop-blur-sm"
       } border-b border-teal/10`}
     >
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <div className="text-2xl font-black tracking-tight text-dark">
-          siga<span className="text-teal">.</span>fibra
-        </div>
+        <img
+          src={logo}
+          alt="Siga Fibra"
+          className="h-auto w-[clamp(70px,20vw,90px)]"
+        />
 
         {/* Links - hidden on mobile */}
         <ul className="hidden md:flex items-center gap-8">
           {[
-            { label: 'Planos', href: '#solucao' },
-            { label: 'Por que a Siga?', href: '#beneficios' },
-            { label: 'Dúvidas', href: '#faq' },
+            { label: "Planos", href: "#solucao" },
+            { label: "Por que a Siga?", href: "#beneficios" },
+            { label: "Dúvidas", href: "#faq" },
           ].map(({ label, href }) => (
             <li key={label}>
               <a
@@ -53,5 +56,5 @@ export default function Navbar() {
         </a>
       </nav>
     </header>
-  )
+  );
 }

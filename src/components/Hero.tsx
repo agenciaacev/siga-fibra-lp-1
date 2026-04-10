@@ -1,103 +1,398 @@
+import { useEffect, useRef, useState } from 'react'
 import { WA_LINK } from '../App'
 
-export default function Hero() {
+function Particles() {
   return (
-    <section className="bg-gradient-to-br from-white to-teal-light overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6 py-20 md:py-28 grid md:grid-cols-2 gap-12 items-center">
+    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {Array.from({ length: 18 }).map((_, i) => (
+        <div
+          key={i}
+          className="absolute rounded-full"
+          style={{
+            width: `${Math.random() * 8 + 4}px`,
+            height: `${Math.random() * 8 + 4}px`,
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            background: 'rgba(0,201,167,0.2)',
+            animation: `particleFloat ${4 + Math.random() * 6}s ease-in-out ${Math.random() * 4}s infinite alternate`,
+          }}
+        />
+      ))}
+    </div>
+  )
+}
 
-        {/* Left: Copy */}
-        <div className="animate-fade-up">
-          <span className="inline-block bg-teal text-white text-xs font-800 tracking-widest uppercase px-4 py-2 rounded-full mb-6">
-            ✦ Instalação Rápida na Sua Região
-          </span>
+function SpeedCard3D() {
+  const cardRef = useRef<HTMLDivElement>(null)
+  const [rotate, setRotate] = useState({ x: 0, y: 0 })
+  const [glare, setGlare] = useState({ x: 50, y: 50 })
+  const [isHovered, setIsHovered] = useState(false)
 
-          <h1 className="text-4xl md:text-5xl font-black leading-tight tracking-tight text-dark mb-6">
-            Internet Rápida de Verdade na Sua Casa —{' '}
-            <span className="text-teal">Sem Travar, Sem Estresse</span>{' '}
-            e Sem Complicação
-          </h1>
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const card = cardRef.current
+    if (!card) return
+    const rect = card.getBoundingClientRect()
+    const dx = (e.clientX - rect.left - rect.width / 2) / (rect.width / 2)
+    const dy = (e.clientY - rect.top - rect.height / 2) / (rect.height / 2)
+    setRotate({ x: -dy * 12, y: dx * 12 })
+    setGlare({
+      x: ((e.clientX - rect.left) / rect.width) * 100,
+      y: ((e.clientY - rect.top) / rect.height) * 100,
+    })
+  }
 
-          <p className="text-muted font-600 text-lg leading-relaxed mb-8">
-            Pare de perder tempo com internet lenta. Tenha velocidade, estabilidade e
-            suporte de verdade com a Siga Fibra.{' '}
-            <strong className="text-dark">
-              Instalação rápida + planos acessíveis
-            </strong>{' '}
-            para você e sua família navegarem sem limites.
-          </p>
+  return (
+    <div
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => { setRotate({ x: 0, y: 0 }); setIsHovered(false) }}
+      style={{ perspective: '1000px', cursor: 'pointer', userSelect: 'none' }}
+    >
+      {/* 3D wrapper */}
+      <div
+        style={{
+          transform: `rotateX(${rotate.x}deg) rotateY(${rotate.y}deg) ${isHovered ? 'scale(1.03)' : 'scale(1)'}`,
+          transition: isHovered ? 'transform 0.08s ease-out' : 'transform 0.5s ease-out',
+          transformStyle: 'preserve-3d',
+          borderRadius: '2rem',
+          boxShadow: isHovered
+            ? '0 40px 80px rgba(0,201,167,0.45), 0 0 0 1px rgba(0,201,167,0.15)'
+            : '0 24px 60px rgba(0,201,167,0.3)',
+        }}
+      >
+        <div
+          className="relative overflow-hidden text-white text-center"
+          style={{
+            background: 'linear-gradient(135deg, #00C9A7 0%, #00DDB8 55%, #00F0CC 100%)',
+            borderRadius: '2rem',
+            padding: '2.5rem 2.5rem 2rem',
+          }}
+        >
+          {/* Glare */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: `radial-gradient(circle at ${glare.x}% ${glare.y}%, rgba(255,255,255,0.28) 0%, transparent 60%)`,
+              borderRadius: '2rem',
+              opacity: isHovered ? 1 : 0,
+              transition: isHovered ? 'none' : 'opacity 0.4s',
+            }}
+          />
 
-          <a
-            href={WA_LINK}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-teal hover:bg-teal-dark text-white font-900 text-base px-10 py-5 rounded-full transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-teal/40 animate-pulse-slow"
-          >
-            QUERO MINHA INTERNET RÁPIDA AGORA
-          </a>
+          {/* Grid sutil */}
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              backgroundImage:
+                'repeating-linear-gradient(0deg,transparent,transparent 39px,rgba(255,255,255,0.05) 39px,rgba(255,255,255,0.05) 40px),repeating-linear-gradient(90deg,transparent,transparent 39px,rgba(255,255,255,0.05) 39px,rgba(255,255,255,0.05) 40px)',
+              borderRadius: '2rem',
+            }}
+          />
 
-          {/* Trust badges */}
-          <div className="flex flex-wrap gap-6 mt-8">
-            {[
-              'Sem fidelidade obrigatória',
-              'Suporte humano real',
-              'Cancelamento fácil',
-            ].map((item) => (
-              <div key={item} className="flex items-center gap-2 text-muted font-700 text-sm">
-                <div className="w-2 h-2 rounded-full bg-teal flex-shrink-0" />
-                {item}
+          {/* Orbs decorativos */}
+          <div className="absolute -top-14 -right-14 w-48 h-48 rounded-full pointer-events-none" style={{ background: 'rgba(255,255,255,0.12)' }} />
+          <div className="absolute -bottom-10 -left-10 w-36 h-36 rounded-full pointer-events-none" style={{ background: 'rgba(255,255,255,0.08)' }} />
+
+          {/* Conteúdo com translateZ para profundidade */}
+          <div className="relative z-10" style={{ transform: 'translateZ(30px)' }}>
+            <span
+              className="inline-block text-xs font-800 uppercase tracking-widest mb-4"
+              style={{
+                background: 'rgba(255,255,255,0.2)',
+                backdropFilter: 'blur(8px)',
+                borderRadius: '50px',
+                padding: '5px 18px',
+                border: '1px solid rgba(255,255,255,0.15)',
+              }}
+            >
+              Velocidade real
+            </span>
+
+            {/* Número principal */}
+            <div
+              style={{
+                fontSize: 'clamp(5rem, 11vw, 7.5rem)',
+                fontWeight: 900,
+                lineHeight: 1,
+                letterSpacing: '-0.04em',
+                textShadow: '0 6px 24px rgba(0,0,0,0.15)',
+              }}
+            >
+              1<span style={{ fontSize: '2.8rem', fontWeight: 800, verticalAlign: 'middle' }}>GB</span>
+            </div>
+
+            <p className="text-white/80 font-600 mt-1 text-sm tracking-wide">
+              na sua casa, de verdade
+            </p>
+
+            {/* Barra de velocidade animada */}
+            <div className="mt-5 mb-5">
+              <div
+                style={{
+                  background: 'rgba(255,255,255,0.15)',
+                  borderRadius: '50px',
+                  height: '5px',
+                  overflow: 'hidden',
+                }}
+              >
+                <div
+                  style={{
+                    height: '100%',
+                    width: '0%',
+                    background: 'rgba(255,255,255,0.9)',
+                    borderRadius: '50px',
+                    animation: 'speedBar 2.2s 0.5s cubic-bezier(0.4,0,0.2,1) forwards',
+                    boxShadow: '0 0 8px rgba(255,255,255,0.6)',
+                  }}
+                />
               </div>
-            ))}
+              <div className="flex justify-between mt-1">
+                <span style={{ fontSize: '10px', color: 'rgba(255,255,255,0.5)', fontWeight: 600 }}>0 MB/s</span>
+                <span style={{ fontSize: '10px', color: 'rgba(255,255,255,0.5)', fontWeight: 600 }}>velocidade máxima ✓</span>
+              </div>
+            </div>
+
+            {/* Stats */}
+            <div
+              style={{
+                display: 'flex',
+                borderTop: '1px solid rgba(255,255,255,0.2)',
+                paddingTop: '1.25rem',
+              }}
+            >
+              {[
+                { value: '0ms', label: 'de lag' },
+                { value: '∞', label: 'dispositivos' },
+                { value: '24h', label: 'suporte' },
+              ].map(({ value, label }, i) => (
+                <div
+                  key={label}
+                  className="text-center flex-1"
+                  style={{
+                    borderLeft: i > 0 ? '1px solid rgba(255,255,255,0.2)' : 'none',
+                    transform: 'translateZ(12px)',
+                  }}
+                >
+                  <strong className="block text-xl font-900" style={{ textShadow: '0 2px 6px rgba(0,0,0,0.1)' }}>
+                    {value}
+                  </strong>
+                  <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.65)', fontWeight: 600 }}>{label}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
-
-        {/* Right: Speed Visual */}
-        <div className="animate-float">
-          <div className="relative bg-gradient-to-br from-teal to-[#00E0C0] rounded-4xl p-12 text-white text-center overflow-hidden shadow-2xl shadow-teal/30">
-            {/* Decorative circles */}
-            <div className="absolute -top-10 -right-10 w-44 h-44 rounded-full bg-white/10" />
-            <div className="absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-white/8" />
-
-            <div className="relative z-10">
-              <p className="text-white/70 font-700 text-sm uppercase tracking-widest mb-2">
-                Velocidade real
-              </p>
-              <div className="text-8xl font-black leading-none tracking-tighter">
-                1<span className="text-4xl font-800">GB</span>
-              </div>
-              <p className="text-white/80 font-600 mt-2 text-sm">
-                na sua casa, de verdade
-              </p>
-
-              <div className="flex justify-center gap-8 mt-10 pt-8 border-t border-white/20">
-                {[
-                  { value: '0ms', label: 'de lag' },
-                  { value: '∞', label: 'dispositivos' },
-                  { value: '24h', label: 'suporte' },
-                ].map(({ value, label }) => (
-                  <div key={label} className="text-center">
-                    <strong className="block text-2xl font-900">{value}</strong>
-                    <span className="text-xs text-white/70 font-600">{label}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Floating card below */}
-          <div className="bg-white rounded-2xl px-6 py-4 mt-4 shadow-lg flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-teal-light flex items-center justify-center flex-shrink-0">
-              <svg className="w-5 h-5 text-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
-            <div>
-              <p className="font-800 text-dark text-sm">Instalação agendada com sucesso!</p>
-              <p className="text-muted text-xs font-600">Equipe a caminho — hoje mesmo</p>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </section>
+
+      {/* Sombra de chão */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: '-18px',
+          left: '12%',
+          right: '12%',
+          height: '18px',
+          background: 'rgba(0,201,167,0.25)',
+          filter: 'blur(14px)',
+          borderRadius: '50%',
+          transition: 'all 0.5s ease',
+          transform: isHovered ? 'scaleX(1.1)' : 'scaleX(1)',
+          opacity: isHovered ? 0.6 : 0.35,
+        }}
+      />
+    </div>
+  )
+}
+
+function FloatingNotification() {
+  return (
+    <div
+      style={{
+        background: '#fff',
+        borderRadius: '1rem',
+        padding: '1rem 1.25rem',
+        marginTop: '1.25rem',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '1rem',
+        boxShadow: '0 8px 32px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,201,167,0.08)',
+        animation: 'notifFloat 4s ease-in-out infinite',
+      }}
+    >
+      <div
+        style={{
+          width: 42, height: 42, borderRadius: '50%', flexShrink: 0,
+          background: 'linear-gradient(135deg, #00C9A7, #00E0C0)',
+          boxShadow: '0 4px 14px rgba(0,201,167,0.4)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+        }}
+      >
+        <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="white" strokeWidth={3}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+
+      <div style={{ flex: 1 }}>
+        <p style={{ fontWeight: 800, color: '#1A1F2E', fontSize: '0.875rem', lineHeight: 1.3 }}>
+          Instalação agendada com sucesso!
+        </p>
+        <p style={{ color: '#6B7280', fontSize: '0.75rem', fontWeight: 600, marginTop: 2 }}>
+          Equipe a caminho — hoje mesmo
+        </p>
+      </div>
+
+      {/* Ping dot */}
+      <div style={{ position: 'relative', flexShrink: 0 }}>
+        <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#00C9A7' }} />
+        <div
+          style={{
+            position: 'absolute', inset: 0, borderRadius: '50%',
+            background: '#00C9A7',
+            animation: 'ping 1.5s ease-out infinite',
+          }}
+        />
+      </div>
+    </div>
+  )
+}
+
+export default function Hero() {
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => { setMounted(true) }, [])
+
+  return (
+    <>
+      <style>{`
+        @keyframes particleFloat {
+          0%   { transform: translateY(0) scale(1); opacity: 0.3; }
+          100% { transform: translateY(-30px) scale(1.5); opacity: 0.07; }
+        }
+        @keyframes speedBar {
+          0%   { width: 0%; }
+          100% { width: 96%; }
+        }
+        @keyframes notifFloat {
+          0%, 100% { transform: translateY(0); }
+          50%       { transform: translateY(-6px); }
+        }
+        @keyframes ping {
+          0%   { transform: scale(1); opacity: 0.5; }
+          100% { transform: scale(2.8); opacity: 0; }
+        }
+        @keyframes heroReveal {
+          from { opacity: 0; transform: translateY(28px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes cardReveal {
+          from { opacity: 0; transform: translateY(40px) rotateY(-10deg); }
+          to   { opacity: 1; transform: translateY(0) rotateY(0); }
+        }
+        .hero-left  { animation: heroReveal 0.7s ease both; }
+        .hero-right { animation: cardReveal 0.85s 0.2s ease both; }
+        .badge-reveal { animation: heroReveal 0.5s 0.05s ease both; }
+        .title-reveal { animation: heroReveal 0.6s 0.15s ease both; }
+        .sub-reveal   { animation: heroReveal 0.6s 0.25s ease both; }
+        .cta-reveal   { animation: heroReveal 0.6s 0.35s ease both; }
+        .trust-reveal { animation: heroReveal 0.6s 0.45s ease both; }
+      `}</style>
+
+      <section
+        className="relative overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #ffffff 0%, #f0fdfb 45%, #e0faf5 100%)' }}
+      >
+        {/* Orbs de fundo */}
+        <div className="absolute pointer-events-none" style={{ top: '-140px', right: '-140px', width: '560px', height: '560px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(0,201,167,0.11) 0%, transparent 70%)' }} />
+        <div className="absolute pointer-events-none" style={{ bottom: '-100px', left: '-100px', width: '400px', height: '400px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(0,201,167,0.07) 0%, transparent 70%)' }} />
+
+        {mounted && <Particles />}
+
+        <div className="max-w-6xl mx-auto px-6 py-20 md:py-28 grid md:grid-cols-2 gap-16 items-center relative z-10">
+
+          {/* LEFT */}
+          <div className="hero-left">
+            <div className="badge-reveal">
+              <span
+                className="inline-flex items-center gap-2 text-white text-xs font-800 tracking-widest uppercase px-4 py-2 rounded-full mb-6"
+                style={{
+                  background: 'linear-gradient(90deg, #00C9A7, #00DDB8)',
+                  boxShadow: '0 4px 16px rgba(0,201,167,0.35)',
+                }}
+              >
+                <span style={{ fontSize: 9 }}>✦</span>
+                Instalação Rápida na Sua Região
+              </span>
+            </div>
+
+            <h1
+              className="title-reveal text-4xl md:text-5xl font-black leading-tight text-dark mb-6"
+              style={{ letterSpacing: '-0.03em' }}
+            >
+              Internet Rápida de Verdade na Sua Casa —{' '}
+              <span
+                style={{
+                  background: 'linear-gradient(90deg, #00C9A7, #009E85)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+              >
+                Sem Travar, Sem Estresse
+              </span>{' '}
+              e Sem Complicação
+            </h1>
+
+            <p className="sub-reveal text-muted font-600 text-lg leading-relaxed mb-8">
+              Pare de perder tempo com internet lenta. Tenha velocidade, estabilidade e
+              suporte de verdade com a Siga Fibra.{' '}
+              <strong className="text-dark">
+                Instalação rápida + planos acessíveis
+              </strong>{' '}
+              para você e sua família navegarem sem limites.
+            </p>
+
+            <div className="cta-reveal">
+              <a
+                href={WA_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-white font-900 text-base px-10 py-5 rounded-full"
+                style={{
+                  background: 'linear-gradient(90deg, #00C9A7 0%, #00B090 100%)',
+                  boxShadow: '0 8px 32px rgba(0,201,167,0.42), inset 0 1px 0 rgba(255,255,255,0.2)',
+                  transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                }}
+                onMouseEnter={e => {
+                  (e.currentTarget as HTMLElement).style.transform = 'translateY(-3px)'
+                  ;(e.currentTarget as HTMLElement).style.boxShadow = '0 14px 42px rgba(0,201,167,0.52), inset 0 1px 0 rgba(255,255,255,0.2)'
+                }}
+                onMouseLeave={e => {
+                  (e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
+                  ;(e.currentTarget as HTMLElement).style.boxShadow = '0 8px 32px rgba(0,201,167,0.42), inset 0 1px 0 rgba(255,255,255,0.2)'
+                }}
+              >
+                QUERO MINHA INTERNET RÁPIDA AGORA
+              </a>
+            </div>
+
+            <div className="trust-reveal flex flex-wrap gap-5 mt-8">
+              {['Sem fidelidade obrigatória', 'Suporte humano real', 'Cancelamento fácil'].map((item) => (
+                <div key={item} className="flex items-center gap-2 text-muted font-700 text-sm">
+                  <div style={{ width: 7, height: 7, borderRadius: '50%', background: 'linear-gradient(135deg,#00C9A7,#00DDB8)', flexShrink: 0, boxShadow: '0 0 6px rgba(0,201,167,0.5)' }} />
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* RIGHT */}
+          <div className="hero-right" style={{ perspective: '1000px' }}>
+            <SpeedCard3D />
+            <FloatingNotification />
+          </div>
+
+        </div>
+      </section>
+    </>
   )
 }
