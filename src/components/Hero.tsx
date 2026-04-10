@@ -424,7 +424,7 @@ export default function Hero() {
           <div className="hero-left">
             <div className="badge-reveal">
               <span
-                className="inline-flex items-center gap-2 text-white text-xs font-800 tracking-widest uppercase px-4 py-2 rounded-full mb-6"
+                className=" inline-flex items-center gap-2 text-white text-xs font-800 tracking-widest uppercase px-4 py-2 rounded-full mb-6"
                 style={{
                   background: 'linear-gradient(90deg, #00C9A7, #00DDB8)',
                   boxShadow: '0 4px 16px rgba(0,201,167,0.35)',
@@ -436,7 +436,7 @@ export default function Hero() {
             </div>
 
             <h1
-              className="title-reveal text-4xl md:text-5xl font-black leading-tight text-dark mb-6"
+              className="title-reveal  text-4xl md:text-5xl font-black leading-tight text-dark mb-6"
               style={{ letterSpacing: '-0.03em' }}
             >
               Internet Rápida de Verdade na Sua Casa —{' '}

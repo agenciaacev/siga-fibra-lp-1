@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800&display=swap");
 
 @layer base {
   html {
@@ -8,7 +9,7 @@
   }
 
   body {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     background-color: #EEF2F5;
     color: #1A1F2E;
     overflow-x: hidden;

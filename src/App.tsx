@@ -14,7 +14,7 @@ export const WA_LINK =
 
 function App() {
   return (
-    <div className="min-h-screen font-sans">
+    <div className="min-h-screen font-DM">
       <Navbar />
       <Hero />
       <Pain />

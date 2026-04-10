@@ -17,6 +17,7 @@ export default {
       },
       fontFamily: {
         sans: ['Nunito', 'sans-serif'],
+        DM: ['DM Sans', 'sans-serif'],
       },
       borderRadius: {
         '2xl': '1rem',
