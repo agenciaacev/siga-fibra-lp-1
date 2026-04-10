@@ -6,12 +6,11 @@ export default {
       colors: {
         teal: {
           DEFAULT: '#00C9A7',
-          dark: '#00A88C',
           darker: '#007A65',
           light: '#E0FAF5',
           lighter: '#F0FDFB',
         },
-        dark: '#1A1F2E',
+        dark: '#575756',
         muted: '#6B7280',
         bg: '#EEF2F5',
       },

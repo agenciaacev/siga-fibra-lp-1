@@ -44,12 +44,12 @@ export default function Pain() {
           <span className="inline-block bg-teal-light text-teal-dark text-xs font-800 tracking-widest uppercase px-5 py-2 rounded-full mb-5">
             Você passa por isso?
           </span>
-          <h2 className="text-3xl md:text-4xl font-black text-dark tracking-tight mb-4">
+          <h2 className="text-3xl md:text-4xl font-black text-[#575756] tracking-tight mb-4">
             Cansado de sofrer com internet ruim todo dia?
           </h2>
           <p className="text-muted font-600 text-lg max-w-xl mx-auto leading-relaxed">
             A verdade é simples: o problema{' '}
-            <strong className="text-dark">não é você</strong>… é a sua internet atual.
+            <strong className="text-[#575756]">não é você</strong>… é a sua internet atual.
           </p>
         </div>
 

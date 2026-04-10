@@ -24,13 +24,13 @@ export default function Solution() {
             A Solução
           </span>
 
-          <h2 className="text-3xl md:text-4xl font-black text-dark tracking-tight mb-5">
+          <h2 className="text-3xl md:text-4xl font-black text-tracking-tight mb-5">
             Conheça a Siga Fibra
           </h2>
 
           <p className="text-muted font-600 text-lg leading-relaxed mb-4">
             A Siga Fibra leva internet por{' '}
-            <strong className="text-dark">fibra óptica</strong> direto até sua casa —
+            <strong className="text-[#575756]">fibra óptica</strong> direto até sua casa —
             isso significa mais velocidade, mais estabilidade e muito menos travamentos.
           </p>
 

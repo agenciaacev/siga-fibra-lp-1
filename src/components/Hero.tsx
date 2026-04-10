@@ -344,7 +344,7 @@ function FloatingNotification() {
       </div>
 
       <div style={{ flex: 1 }}>
-        <p style={{ fontWeight: 800, color: '#1A1F2E', fontSize: '0.875rem', lineHeight: 1.3 }}>
+        <p style={{ fontWeight: 800, color: '#575756', fontSize: '0.875rem', lineHeight: 1.3 }}>
           Instalação agendada com sucesso!
         </p>
         <p style={{ color: '#6B7280', fontSize: '0.75rem', fontWeight: 600, marginTop: 2 }}>
@@ -431,15 +431,15 @@ export default function Hero() {
                 }}
               >
                 <span style={{ fontSize: 9 }}>✦</span>
-                Instalação Rápida na Sua Região
+                Instalação rápida na rua região
               </span>
             </div>
 
             <h1
-              className="title-reveal  text-4xl md:text-5xl font-black leading-tight text-dark mb-6"
+              className="title-reveal  text-4xl md:text-5xl font-black leading-tight text-[#575756] mb-6"
               style={{ letterSpacing: '-0.03em' }}
             >
-              Internet Rápida de Verdade na Sua Casa{' '}
+              Internet rápida de verdade na sua casa {' '}
               <span
                 style={{
                   background: 'linear-gradient(90deg, #00C9A7, #009E85)',
@@ -448,15 +448,15 @@ export default function Hero() {
                   backgroundClip: 'text',
                 }}
               >
-                Sem Travar, Sem Estresse
+                sem travar, sem estresse
               </span>{' '}
-              e Sem Complicação
+              e sem complicação
             </h1>
 
             <p className="sub-reveal text-muted font-600 text-lg leading-relaxed mb-8">
               Pare de perder tempo com internet lenta. Tenha velocidade, estabilidade e
               suporte de verdade com a Siga Fibra.{' '}
-              <strong className="text-dark">
+              <strong className="text-[#575756]">
                 Instalação rápida + planos acessíveis
               </strong>{' '}
               para você e sua família navegarem sem limites.

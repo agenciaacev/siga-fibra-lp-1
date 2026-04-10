@@ -48,7 +48,7 @@ export default function Benefits() {
           <span className="inline-block bg-teal-light text-teal-dark text-xs font-800 tracking-widest uppercase px-5 py-2 rounded-full mb-5">
             Por que a Siga Fibra?
           </span>
-          <h2 className="text-3xl md:text-4xl font-black text-dark tracking-tight mb-4">
+          <h2 className="text-3xl md:text-4xl font-black text-[#575756] tracking-tight mb-4">
             Benefícios que fazem diferença de verdade
           </h2>
           <p className="text-muted font-600 text-lg max-w-xl mx-auto leading-relaxed">
