@@ -1,21 +1,34 @@
+//@ts-ignore
+import videoTravando from '../assets/102.png'
+//@ts-ignore
+import internetCaindo from '../assets/101.png'
+//@ts-ignore
+import wifiLento from '../assets/103.png'
+//@ts-ignore
+import pagarCaro from '../assets/104.png'
+
 const painPoints = [
   {
-    icon: '📺',
+    image: videoTravando,
+    alt: 'Vídeo travando',
     title: 'Vídeo travando',
     desc: 'Bem na melhor parte do filme ou série, aquela tela de carregamento aparece.',
   },
   {
-    icon: '💼',
+    image: internetCaindo,
+    alt: 'Internet caindo',
     title: 'Internet caindo',
     desc: 'No meio de uma reunião importante ou de uma aula que não dá pra perder.',
   },
   {
-    icon: '📶',
+    image: wifiLento,
+    alt: 'Wi-Fi lento',
     title: 'Wi-Fi lento',
     desc: 'Quando mais de uma pessoa usa a internet em casa, tudo trava junto.',
   },
   {
-    icon: '💸',
+    image: pagarCaro,
+    alt: 'Pagar caro à toa',
     title: 'Pagar caro à toa',
     desc: 'Por um serviço que não entrega o que promete no contrato.',
   },
@@ -41,17 +54,23 @@ export default function Pain() {
         </div>
 
         {/* Pain Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-10">
-          {painPoints.map(({ icon, title, desc }) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+          {painPoints.map(({ image, alt, title, desc }) => (
             <div
               key={title}
-              className="flex items-start gap-4 bg-white rounded-2xl px-6 py-5 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200"
+              className="relative flex flex-col items-center text-center bg-white rounded-2xl px-6 pt-20 pb-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200 mt-16"
             >
-              <span className="text-3xl flex-shrink-0 mt-0.5">{icon}</span>
-              <div>
-                <p className="font-800 text-dark text-base mb-1">{title}</p>
-                <p className="text-muted font-600 text-sm leading-relaxed">{desc}</p>
+              {/* Fundo circular + imagem flutuando */}
+              <div className="absolute -top-14 left-1/2 -translate-x-1/2 w-28 h-28 rounded-full bg-gradient-to-br from-teal/20 to-teal/5 border border-teal/20 flex items-center justify-center shadow-sm">
+                <img
+                  src={image}
+                  alt={alt}
+                  className="w-20 h-20 object-contain drop-shadow-md"
+                />
               </div>
+
+              <p className="font-800 text-dark text-base mb-1">{title}</p>
+              <p className="text-muted font-600 text-sm leading-relaxed">{desc}</p>
             </div>
           ))}
         </div>
