@@ -439,7 +439,7 @@ export default function Hero() {
               className="title-reveal  text-4xl md:text-5xl font-black leading-tight text-dark mb-6"
               style={{ letterSpacing: '-0.03em' }}
             >
-              Internet Rápida de Verdade na Sua Casa —{' '}
+              Internet Rápida de Verdade na Sua Casa{' '}
               <span
                 style={{
                   background: 'linear-gradient(90deg, #00C9A7, #009E85)',
