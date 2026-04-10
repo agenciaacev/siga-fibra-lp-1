@@ -30,7 +30,7 @@ export default function Solution() {
 
           <p className="text-muted font-600 text-lg leading-relaxed mb-4">
             A Siga Fibra leva internet por{' '}
-            <strong className="text-[#575756]">fibra óptica</strong> direto até sua casa —
+            <strong className="text-[#575756]">fibra óptica</strong> direto até sua casa
             isso significa mais velocidade, mais estabilidade e muito menos travamentos.
           </p>
 

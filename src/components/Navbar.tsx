@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { WA_LINK } from "../App";
 //@ts-ignore
-import logo from "../assets/logo.png";
+import logo from "../assets/logosiga.png";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -16,8 +16,8 @@ export default function Navbar() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#00CBC8]/20 backdrop-blur-md shadow-md"
-          : "bg-[#00CBC8]/50 backdrop-blur-sm"
+          ? "bg-bg/20 backdrop-blur-md shadow-md"
+          : "bg-bg/20 backdrop-blur-sm"
       } border-b border-teal/10`}
     >
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">

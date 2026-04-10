@@ -21,7 +21,7 @@ export default function UseCases() {
                 Ideal para
               </p>
               <h2 className="text-3xl md:text-4xl font-black text-white tracking-tight leading-tight mb-4">
-                Tudo o que você ama — funcionando de verdade
+                Tudo o que você ama funcionando de verdade
               </h2>
               <p className="text-white/80 font-600 leading-relaxed">
                 Com a Siga Fibra, você tem liberdade para usar a internet sem pensar

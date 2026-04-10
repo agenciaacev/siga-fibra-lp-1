@@ -3,15 +3,15 @@ import { useState } from 'react'
 const faqs = [
   {
     q: '"Mas será que funciona na minha casa?"',
-    a: 'Sim! A Siga Fibra atende sua região com cobertura otimizada. Entre em contato e verifique a disponibilidade na sua rua — é rápido e sem compromisso.',
+    a: 'Sim! A Siga Fibra atende sua região com cobertura otimizada. Entre em contato e verifique a disponibilidade na sua rua é rápido e sem compromisso.',
   },
   {
     q: '"E se der algum problema?"',
-    a: 'Você tem suporte humano pronto para resolver. Sem filas intermináveis, sem robôs — uma equipe real que resolve de verdade.',
+    a: 'Você tem suporte humano pronto para resolver. Sem filas intermináveis, sem robôs uma equipe real que resolve de verdade.',
   },
   {
     q: '"É difícil instalar?"',
-    a: 'Não. Nossa equipe faz tudo por você. Você só precisa marcar o horário e aguardar — a instalação é rápida e sem complicação.',
+    a: 'Não. Nossa equipe faz tudo por você. Você só precisa marcar o horário e aguardar rápida e sem complicação.',
   },
   {
     q: '"E se eu não gostar?"',
