@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { WA_LINK } from "../App";
+//@ts-ignore
 import logo from "../assets/logo.png";
 
 export default function Navbar() {
