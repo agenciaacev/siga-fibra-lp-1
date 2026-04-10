@@ -61,7 +61,7 @@ export default function FAQ() {
           <span className="inline-block bg-teal-light text-teal-dark text-xs font-800 tracking-widest uppercase px-5 py-2 rounded-full mb-5">
             Sem desculpas
           </span>
-          <h2 className="text-3xl md:text-4xl font-black text-darktracking-tight mb-4">
+          <h2 className="text-3xl md:text-4xl font-black text-[#575756]text-darktracking-tight mb-4">
             Quebrando suas dúvidas
           </h2>
           <p className="text-muted font-600 text-lg max-w-md mx-auto">
