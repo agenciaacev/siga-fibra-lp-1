@@ -1,0 +1,57 @@
+import { useEffect, useState } from 'react'
+import { WA_LINK } from '../App'
+
+export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 40)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  return (
+    <header
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? 'bg-bg/95 backdrop-blur-md shadow-md'
+          : 'bg-bg/80 backdrop-blur-sm'
+      } border-b border-teal/10`}
+    >
+      <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        {/* Logo */}
+        <div className="text-2xl font-black tracking-tight text-dark">
+          siga<span className="text-teal">.</span>fibra
+        </div>
+
+        {/* Links - hidden on mobile */}
+        <ul className="hidden md:flex items-center gap-8">
+          {[
+            { label: 'Planos', href: '#solucao' },
+            { label: 'Por que a Siga?', href: '#beneficios' },
+            { label: 'Dúvidas', href: '#faq' },
+          ].map(({ label, href }) => (
+            <li key={label}>
+              <a
+                href={href}
+                className="text-muted font-700 text-sm hover:text-teal transition-colors"
+              >
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        {/* CTA */}
+        <a
+          href={WA_LINK}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-teal hover:bg-teal-dark text-white font-800 text-sm px-5 py-3 rounded-full transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-teal/30"
+        >
+          Assinar pelo WhatsApp
+        </a>
+      </nav>
+    </header>
+  )
+}
