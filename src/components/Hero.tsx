@@ -581,7 +581,7 @@ export default function Hero() {
               </strong>{" "}
               para você e sua família navegarem sem limites.
             </p>
-
+                {/* bg-[#25D366] hover:bg-[#1ebe5a] */}
             <div className="cta-reveal">
               <a
                 href={WA_LINK}
@@ -590,22 +590,22 @@ export default function Hero() {
                 className="inline-block text-white font-900 font-semibold text-base px-10 py-5 rounded-full"
                 style={{
                   background:
-                    "linear-gradient(90deg, #00C9A7 0%, #00B090 100%)",
+                    "linear-gradient(90deg, #25D366 0%, #25D366 100%)",
                   boxShadow:
-                    "0 8px 32px rgba(0,201,167,0.42), inset 0 1px 0 rgba(255,255,255,0.2)",
+                    "0 8px 32px #25D366, inset 0 1px 0 rgba(255,255,255,0.2)",
                   transition: "transform 0.2s ease, box-shadow 0.2s ease",
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLElement).style.transform =
                     "translateY(-3px)";
                   (e.currentTarget as HTMLElement).style.boxShadow =
-                    "0 14px 42px rgba(0,201,167,0.52), inset 0 1px 0 rgba(255,255,255,0.2)";
+                    "0 14px 42px #25D366, inset 0 1px 0 rgba(255,255,255,0.2)";
                 }}
                 onMouseLeave={(e) => {
                   (e.currentTarget as HTMLElement).style.transform =
                     "translateY(0)";
                   (e.currentTarget as HTMLElement).style.boxShadow =
-                    "0 8px 32px rgba(0,201,167,0.42), inset 0 1px 0 rgba(255,255,255,0.2)";
+                    "0 8px 32px #25D366, inset 0 1px 0 rgba(255,255,255,0.2)";
                 }}
               >
                 QUERO MINHA INTERNET RÁPIDA AGORA

@@ -3,6 +3,26 @@ import { WA_LINK } from '../App'
 export default function CTAFinal() {
   return (
     <section className="relative bg-gradient-to-br from-teal to-[#00B896] py-24 md:py-32 overflow-hidden">
+      <style>{`
+        @keyframes bounceOut {
+          0%, 100% {
+            transform: translateY(0) scale(1);
+            box-shadow: 0 4px 24px rgba(255,255,255,0.10), 0 0 0px rgba(255,255,255,0);
+          }
+          60%, 75% {
+            transform: translateY(-14px) scale(1.04);
+            box-shadow: 0 12px 48px rgba(255,255,255,0.55), 0 0 40px rgba(255,255,255,0.30);
+          }
+          90% {
+            transform: translateY(0) scale(1);
+            box-shadow: 0 4px 24px rgba(255,255,255,0.10), 0 0 0px rgba(255,255,255,0);
+          }
+        }
+        .btn-bounce {
+          animation: bounceOut 1.6s ease-in-out infinite;
+        }
+      `}</style>
+
       {/* Decorative */}
       <div className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-white/10 pointer-events-none" />
       <div className="absolute -bottom-16 -left-16 w-64 h-64 rounded-full bg-white/8 pointer-events-none" />
@@ -25,7 +45,7 @@ export default function CTAFinal() {
           href={WA_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-white text-teal-dark font-900 font-semibold text-lg px-12 py-6 rounded-full shadow-2xl hover:-translate-y-1 hover:shadow-white/30 transition-all duration-200"
+          className="btn-bounce inline-block bg-white text-teal-dark font-900 font-semibold text-lg px-12 py-6 rounded-full active:scale-[0.98]"
         >
           QUERO INSTALAR MINHA INTERNET AGORA
         </a>

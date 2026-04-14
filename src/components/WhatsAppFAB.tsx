@@ -26,7 +26,7 @@ export default function WhatsAppFAB() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar no WhatsApp"
-      className="fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#1ebe5a] text-white font-800 text-sm px-5 py-3.5 rounded-full shadow-xl shadow-[#25D366]/40 hover:shadow-[#25D366]/60 flex items-center gap-2.5 transition-all hover:-translate-y-1"
+      className="fixed bottom-6 right-6 z-50 bg-gradient-to-r from-teal to-[#00E0C0] text-white font-800 text-sm px-5 py-3.5 rounded-full shadow-xl shadow-[#25D366]/40 hover:shadow-[#25D366]/60 flex items-center gap-2.5 transition-all hover:-translate-y-1"
     >
       <WhatsAppIcon />
       Falar no WhatsApp
