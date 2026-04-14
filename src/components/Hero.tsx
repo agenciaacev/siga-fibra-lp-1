@@ -574,7 +574,7 @@ export default function Hero() {
             </h1>
 
             <p className="sub-reveal text-muted font-600 text-lg leading-relaxed mb-8">
-              Pare de perder tempo com internet lenta. Tenha velocidade,
+              Pare de perder tempo com internet lenta. <strong className="text-[#575756]">hipervelocidade</strong> ,
               estabilidade e suporte de verdade com a Siga Fibra.{" "}
               <strong className="text-[#575756]">
                 Instalação rápida + planos acessíveis

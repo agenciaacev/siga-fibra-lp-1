@@ -45,7 +45,7 @@ export default function Pain() {
             Você passa por isso?
           </span>
           <h2 className="text-3xl md:text-4xl font-black text-[#575756] tracking-tight mb-4">
-            Cansado de sofrer com internet ruim todo dia?
+            Cansado de sofrer com internet <strong className="text-[#575756]">Lenta</strong> todo dia?
           </h2>
           <p className="text-muted font-600 text-lg max-w-xl mx-auto leading-relaxed">
             A verdade é simples: o problema{' '}
