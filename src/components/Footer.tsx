@@ -26,7 +26,7 @@ const footerLinks = [
     title: "Suporte Técnico",
     links: [
       "Autoatendimento via Whatsapp",
-      "(85) 3198-9560",
+      "(85) 3198-9550",
       "suporte@sigafibra.com",
     ],
   },
