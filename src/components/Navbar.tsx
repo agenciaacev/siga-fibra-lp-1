@@ -31,8 +31,8 @@ export default function Navbar() {
         {/* Links - hidden on mobile */}
         <ul className="hidden md:flex items-center gap-8">
           {[
-            { label: "Planos", href: "#solucao" },
-            { label: "Por que a Siga?", href: "#beneficios" },
+            { label: "Planos", href: "#planos" },
+            { label: "Por que a Siga?", href: "#porque-siga" },
             { label: "Dúvidas", href: "#faq" },
           ].map(({ label, href }) => (
             <li key={label}>

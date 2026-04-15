@@ -37,7 +37,7 @@ import logo from "../assets/g.png";
 
 export default function Benefits() {
   return (
-    <section className="bg-[#f5f7f2] py-20 md:py-28">
+    <section id="porque-siga" className="bg-[#f5f7f2] py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-6">
 
         {/* Header */}

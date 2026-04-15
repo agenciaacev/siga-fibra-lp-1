@@ -360,6 +360,7 @@ function PlanCard({ plan }: { plan: typeof plans[0] }) {
 export default function Plans() {
   return (
     <section
+      id="planos"
       className="relative overflow-hidden py-20 md:py-28"
       style={{ background: "#d6f0e8" }}
     >
