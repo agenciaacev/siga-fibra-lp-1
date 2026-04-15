@@ -28,7 +28,7 @@ const benefits = [
 const seals = [
   { label: "Rápida", value: "Instalação" },
   { label: "Humanizado", value: "Suporte" },
-  { label: "Fácil", value: "Cancelamento" },
+  { label: "Personalizado", value: "Plano " },
   { label: "Na sua região", value: "Cobertura" },
 ];
 
