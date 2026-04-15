@@ -587,7 +587,7 @@ export default function Hero() {
                 href={WA_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block text-white text-center font-900 font-semibold text-base px-10 py-5 rounded-full"
+                className="inline-block text-white text-center font-900 font-semibold text-lg px-10 py-5 rounded-full"
                 style={{
                   background:
                     "linear-gradient(90deg, #25D366 0%, #25D366 100%)",

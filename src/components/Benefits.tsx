@@ -45,7 +45,7 @@ export default function Benefits() {
           <span className="inline-block bg-[#d4f0e0] text-[#0f6e56] text-xs font-semibold tracking-widest uppercase px-5 py-2 rounded-full mb-5">
             Por que a Siga Fibra?
           </span>
-          <h2 className="text-3xl md:text-4xl font-black text-[#2c3e30] tracking-tight mb-4">
+          <h2 className="text-3xl md:text-4xl font-black text-[#575756] tracking-tight mb-4">
             Benefícios que fazem diferença de verdade
           </h2>
           <p className="text-[#6b7c72] text-lg max-w-xl mx-auto leading-relaxed">
@@ -56,10 +56,10 @@ export default function Benefits() {
         {/* Grid de cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-12">
           {benefits.map(({ title, desc }, i) => (
-            <div
+            <div 
               key={title}
-              className="relative bg-white rounded-2xl p-7 border border-[#d8e8dd]/70 overflow-hidden
-                         hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(15,110,86,0.10)] transition-all duration-200"
+              className="relative  bg-white rounded-2xl p-7 border border-[#d8e8dd]/70 overflow-hidden text-[#575756]
+                         hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(15,110,86,0.10)] transition-all duration-200" 
             >
               <span className="absolute top-5 right-5 text-[11px] font-bold text-[#b9d9c8] tracking-wide">
                 {String(i + 1).padStart(2, "0")}
@@ -73,7 +73,7 @@ export default function Benefits() {
                 <img src={logo} alt="" className="w-full h-full object-contain" />
               </div>
 
-              <h3 className="font-extrabold text-[#1e3328] text-[15px] mb-2">{title}</h3>
+              <h3 className="font-extrabold text-[#575756] text-[15px] mb-2">{title}</h3>
               <p className="text-[#6b7c72] text-[13.5px] leading-relaxed">{desc}</p>
             </div>
           ))}

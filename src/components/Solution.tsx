@@ -20,7 +20,7 @@ export default function Solution() {
 
         {/* Left: Copy */}
         <div>
-          <span className="inline-block bg-teal-light text-teal-dark text-xs font-800 tracking-widest uppercase px-5 py-2 rounded-full mb-6">
+          <span className="inline-block bg-[#d4f0e0] text-[#0f6e56] text-xs font-semibold tracking-widest uppercase px-5 py-2 rounded-full mb-5">
             A Solução
           </span>
 

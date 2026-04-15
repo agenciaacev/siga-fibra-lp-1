@@ -41,7 +41,7 @@ export default function Pain() {
 
         {/* Header */}
         <div className="text-center mb-14">
-          <span className="inline-block bg-teal-light text-teal-dark text-xs font-800 tracking-widest uppercase px-5 py-2 rounded-full mb-5">
+          <span className="inline-block bg-[#d4f0e0] text-[#0f6e56] text-xs font-semibold tracking-widest uppercase px-5 py-2 rounded-full mb-5">
             Você passa por isso?
           </span>
           <h2 className="text-3xl md:text-4xl font-black text-[#575756] tracking-tight mb-4">

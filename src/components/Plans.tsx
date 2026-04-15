@@ -369,13 +369,13 @@ export default function Plans() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
         <div className="text-center mb-12">
-          <p className="text-[11px] font-bold tracking-widest uppercase text-[#0F6E56] mb-2">
+          <p className="inline-block bg-[#d4f0e0] text-[#0f6e56] text-xs font-semibold tracking-widest uppercase px-5 py-2 rounded-full mb-5">
             Conecte-se
           </p>
-          <h2 className="text-3xl md:text-4xl font-black text-[#1a2e26] mb-3">
+          <h2 className="text-3xl md:text-4xl font-black text-[#575756]mb-3">
             Nossos planos de fibra
           </h2>
-          <p className="text-[#5a7a6e] text-base max-w-lg mx-auto">
+          <p className="text-[#575756] text-base max-w-lg mx-auto">
             Pague antes do vencimento e garanta o desconto. Após o vencimento,
             o valor retorna ao preço padrão.
           </p>
