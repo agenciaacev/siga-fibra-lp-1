@@ -133,13 +133,6 @@ function PlatformButton({
 
 // ─── Banner "+20 plataformas" ──────────────────────────────────────────────────
 function MorePlatformsBanner() {
-  const handleClick = () => {
-    const msg = encodeURIComponent(
-      "Olá! Vi que vocês têm mais de 20 plataformas disponíveis. Quero saber mais sobre as opções! 😊"
-    );
-    window.open(`https://wa.me/${WPP_NUMBER}?text=${msg}`, "_blank");
-  };
-
   return (
     <div
       className="w-full mt-3 flex items-center justify-between gap-2 rounded-[12px] px-3 py-2.5 border border-dashed border-[#3ecf8e] bg-[#f0faf7] hover:bg-[#e6faf8] transition-all group"
