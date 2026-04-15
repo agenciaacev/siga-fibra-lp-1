@@ -98,6 +98,61 @@ function buildWhatsAppMessage(
   );
 }
 
+// ─── Background decorativo SVG ─────────────────────────────────────────────────
+function BackgroundDecor() {
+  return (
+    <svg
+      className="pointer-events-none absolute inset-0 h-full w-full"
+      preserveAspectRatio="xMidYMid slice"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <defs>
+        <pattern id="plans-dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+          <circle cx="1" cy="1" r="1.2" fill="#a8d9c8" opacity="0.7" />
+        </pattern>
+      </defs>
+
+      {/* base de pontos */}
+      <rect width="100%" height="100%" fill="url(#plans-dots)" />
+
+      {/* blobs suaves nos cantos */}
+      <ellipse cx="92%" cy="4%" rx="260" ry="210" fill="#b8e8d8" opacity="0.55" />
+      <ellipse cx="8%"  cy="96%" rx="210" ry="170" fill="#b8e8d8" opacity="0.5" />
+
+      {/* blob branco difuso no centro para respirar */}
+      <ellipse cx="50%" cy="50%" rx="340" ry="200" fill="#e8f8f2" opacity="0.4" />
+
+      {/* arcos concentricos direita */}
+      <circle cx="93%" cy="0"   r="200" fill="none" stroke="#9dd5be" strokeWidth="1"   opacity="0.55" />
+      <circle cx="93%" cy="0"   r="270" fill="none" stroke="#9dd5be" strokeWidth="0.6" opacity="0.35" />
+      <circle cx="93%" cy="0"   r="340" fill="none" stroke="#9dd5be" strokeWidth="0.4" opacity="0.2"  />
+
+      {/* arcos concentricos esquerda-baixo */}
+      <circle cx="5%"  cy="100%" r="170" fill="none" stroke="#9dd5be" strokeWidth="1"   opacity="0.55" />
+      <circle cx="5%"  cy="100%" r="240" fill="none" stroke="#9dd5be" strokeWidth="0.6" opacity="0.3"  />
+
+      {/* highlight cyan topo direito */}
+      <ellipse cx="88%" cy="0" rx="200" ry="100" fill="#00c2c7" opacity="0.07" />
+
+      {/* linha diagonal sutil */}
+      <line x1="0" y1="68%" x2="100%" y2="22%" stroke="#9dd5be" strokeWidth="0.5" opacity="0.4" />
+
+      {/* formas geométricas flutuantes */}
+      <rect x="76%" y="62%" width="38" height="38" rx="6"
+        fill="none" stroke="#00c2c7" strokeWidth="1" opacity="0.3"
+        transform="rotate(18 76% 62%)" />
+      <rect x="14%" y="12%" width="28" height="28" rx="4"
+        fill="none" stroke="#3ecf8e" strokeWidth="1" opacity="0.3"
+        transform="rotate(-12 14% 12%)" />
+      <circle cx="54%" cy="6%"  r="9"  fill="none" stroke="#0F6E56" strokeWidth="0.8" opacity="0.25" />
+      <circle cx="46%" cy="94%" r="13" fill="none" stroke="#00c2c7" strokeWidth="0.8" opacity="0.25" />
+      <circle cx="83%" cy="72%" r="6"  fill="none" stroke="#3ecf8e" strokeWidth="0.8" opacity="0.3"  />
+      <circle cx="18%" cy="38%" r="5"  fill="none" stroke="#00c2c7" strokeWidth="0.8" opacity="0.25" />
+    </svg>
+  );
+}
+
 // ─── Botão de plataforma ───────────────────────────────────────────────────────
 function PlatformButton({
   platform,
@@ -134,9 +189,7 @@ function PlatformButton({
 // ─── Banner "+20 plataformas" ──────────────────────────────────────────────────
 function MorePlatformsBanner() {
   return (
-    <div
-      className="w-full mt-3 flex items-center justify-between gap-2 rounded-[12px] px-3 py-2.5 border border-dashed border-[#3ecf8e] bg-[#f0faf7] hover:bg-[#e6faf8] transition-all group"
-    >
+    <div className="w-full mt-3 flex items-center justify-between gap-2 rounded-[12px] px-3 py-2.5 border border-dashed border-[#3ecf8e] bg-[#f0faf7] hover:bg-[#e6faf8] transition-all group">
       <div className="flex items-center gap-2">
         <div className="flex -space-x-2">
           {["🎬", "🎵", "📺"].map((emoji, i) => (
@@ -160,6 +213,7 @@ function MorePlatformsBanner() {
     </div>
   );
 }
+
 // ─── Card do plano ─────────────────────────────────────────────────────────────
 function PlanCard({ plan }: { plan: typeof plans[0] }) {
   const [selected, setSelected] = useState<SelectedPlatforms>({
@@ -272,10 +326,8 @@ function PlanCard({ plan }: { plan: typeof plans[0] }) {
             ))}
           </div>
 
-          {/* Banner +20 plataformas */}
           <MorePlatformsBanner />
 
-          {/* Resumo do extra selecionado */}
           {hasSelection && (
             <div className="mt-2 flex items-center justify-between bg-[#f0faf7] rounded-[8px] px-3 py-2">
               <span className="text-[10px] text-[#5a7a6e]">
@@ -307,8 +359,14 @@ function PlanCard({ plan }: { plan: typeof plans[0] }) {
 // ─── Seção principal ───────────────────────────────────────────────────────────
 export default function Plans() {
   return (
-    <section className="bg-[#eaf6f2] py-20 md:py-28">
-      <div className="max-w-6xl mx-auto px-6">
+    <section
+      className="relative overflow-hidden py-20 md:py-28"
+      style={{ background: "#d6f0e8" }}
+    >
+      {/* Background decorativo */}
+      <BackgroundDecor />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-6">
         <div className="text-center mb-12">
           <p className="text-[11px] font-bold tracking-widest uppercase text-[#0F6E56] mb-2">
             Conecte-se
