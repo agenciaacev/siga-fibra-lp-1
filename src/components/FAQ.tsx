@@ -1,31 +1,29 @@
-import { useState } from 'react'
+import { useState } from "react";
 
 const faqs = [
   {
     q: '"Mas será que funciona na minha casa?"',
-    a: 'Sim! A Siga Fibra atende sua região com cobertura otimizada. Entre em contato e verifique a disponibilidade na sua rua é rápido e sem compromisso.',
+    a: "Sim! A Siga Fibra atende sua região com cobertura otimizada. Entre em contato e verifique a disponibilidade na sua rua é rápido e sem compromisso.",
   },
   {
     q: '"E se der algum problema?"',
-    a: 'Você tem suporte humano pronto para resolver. Sem filas intermináveis, sem robôs uma equipe real que resolve de verdade.',
+    a: "Você tem suporte humano pronto para resolver. Sem filas intermináveis, sem robôs uma equipe real que resolve de verdade.",
   },
   {
     q: '"É difícil instalar?"',
-    a: 'Não. Nossa equipe faz tudo por você. Você só precisa marcar o horário e aguardar rápida e sem complicação.',
+    a: "Não. Nossa equipe faz tudo por você. Você só precisa marcar o horário e aguardar rápida e sem complicação.",
   },
   {
-    q: '"E se eu não gostar?"',
-    a: 'Cancelamento fácil, sem burocracia. Mas spoiler: você vai gostar. A diferença se sente já nos primeiros dias de uso.',
+    q: '"Vale a pena mudar pra Siga Fibra?"',
+    a: "Com certeza! Você ganha mais velocidade, estabilidade e suporte de verdade. É uma experiência muito superior à internet comum.",
   },
-]
+];
 
 function FAQItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
-    <div
-      className="bg-white rounded-2xl overflow-hidden shadow-sm border border-teal/10 transition-all"
-    >
+    <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-teal/10 transition-all">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between px-7 py-5 text-left gap-4 hover:bg-teal-lighter transition-colors"
@@ -33,7 +31,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
         <span className="font-800 text-dark text-base">{q}</span>
         <span
           className={`text-teal text-xl font-700 flex-shrink-0 transition-transform duration-200 ${
-            open ? 'rotate-45' : ''
+            open ? "rotate-45" : ""
           }`}
         >
           +
@@ -42,20 +40,17 @@ function FAQItem({ q, a }: { q: string; a: string }) {
 
       {open && (
         <div className="px-7 pb-6 border-t border-teal/10">
-          <p className="text-muted font-600 leading-relaxed pt-4">
-            👉 {a}
-          </p>
+          <p className="text-muted font-600 leading-relaxed pt-4">👉 {a}</p>
         </div>
       )}
     </div>
-  )
+  );
 }
 
 export default function FAQ() {
   return (
     <section id="faq" className="bg-bg py-20 md:py-28">
       <div className="max-w-6xl mx-auto px-6">
-
         {/* Header */}
         <div className="text-center mb-14">
           <span className="inline-block bg-[#d4f0e0] text-[#0f6e56] text-xs font-semibold tracking-widest uppercase px-5 py-2 rounded-full mb-5">
@@ -65,7 +60,8 @@ export default function FAQ() {
             Quebrando suas dúvidas
           </h2>
           <p className="text-muted font-600 text-lg max-w-md mx-auto ">
-            Sabemos que você pode ter perguntas. Aqui estão as respostas honestas.
+            Sabemos que você pode ter perguntas. Aqui estão as respostas
+            honestas.
           </p>
         </div>
 
@@ -75,8 +71,7 @@ export default function FAQ() {
             <FAQItem key={q} q={q} a={a} />
           ))}
         </div>
-
       </div>
     </section>
-  )
+  );
 }
