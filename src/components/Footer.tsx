@@ -105,7 +105,7 @@ export default function Footer() {
             SIGA FIBRA LTDA — CNPJ: 16.577.060/0001-01 | Rua Gonçalves Ledo,
             2846 — Fortaleza-CE
           </span>
-          <span>©2025 SIGA FIBRA — Todos os direitos reservados.</span>
+          <span>©2026 SIGA FIBRA — Todos os direitos reservados.</span>
         </div>
       </div>
     </footer>
