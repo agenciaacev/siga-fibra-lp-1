@@ -51,7 +51,7 @@ export default function CTAFinal() {
         </a>
 
         <p className="text-white/60 font-600 text-sm mt-6">
-          Sem burocracia &nbsp;•&nbsp; Instalação rápida &nbsp;•&nbsp; Cancelamento fácil
+          Sem burocracia &nbsp;•&nbsp; Instalação rápida &nbsp;•&nbsp; Planos sem pegadinhas
         </p>
       </div>
     </section>
