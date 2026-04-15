@@ -18,10 +18,15 @@ interface SelectedPlatforms {
 }
 
 // ─── Imports de imagens ────────────────────────────────────────────────────────
+//@ts-ignore
 import deezerImg    from "../assets/deezer.png";
+//@ts-ignore
 import globoplayImg from "../assets/globoplayicon.png";
+//@ts-ignore
 import disneyImg    from "../assets/disney+.png";
+//@ts-ignore
 import hboImg       from "../assets/hbo.webp";
+//@ts-ignore
 import primeImg     from "../assets/prime-video.png";
 
 const PLATFORMS: Platform[] = [
