@@ -504,7 +504,7 @@ export default function Hero() {
         .trust-reveal { animation: heroReveal 0.6s 0.45s ease both; }
       `}</style>
 
-      <section
+      <section id="home"
         className="relative overflow-hidden"
         style={{
           background:

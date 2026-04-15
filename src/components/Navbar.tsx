@@ -22,11 +22,13 @@ export default function Navbar() {
     >
       <nav className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
+        <a href="#home" className="flex items-center gap-3">
         <img
           src={logo}
           alt="Siga Fibra"
           className="h-auto w-[clamp(70px,20vw,90px)]"
         />
+        </a>
 
         {/* Links - hidden on mobile */}
         <ul className="hidden md:flex items-center gap-8">
