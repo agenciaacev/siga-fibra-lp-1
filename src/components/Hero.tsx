@@ -614,9 +614,9 @@ export default function Hero() {
 
             <div className="trust-reveal flex flex-wrap gap-5 mt-8">
               {[
-                "Sem fidelidade obrigatória",
-                "Suporte humano real",
-                "Cancelamento fácil",
+                "Suporte humanizado",
+                "Instalação rápida e fácil",
+                "Planos sem pegadinhas",
               ].map((item) => (
                 <div
                   key={item}
