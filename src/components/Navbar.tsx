@@ -26,7 +26,7 @@ export default function Navbar() {
         <img
           src={logo}
           alt="Siga Fibra"
-          className="h-auto w-[clamp(70px,20vw,90px)]"
+          className="h-auto w-[clamp(70px,20vw,130px)]"
         />
         </a>
 
