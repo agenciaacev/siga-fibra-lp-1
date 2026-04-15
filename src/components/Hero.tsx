@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 // Replace with your actual WA_LINK import in your project:
 // import { WA_LINK } from '../App'
-const WA_LINK = "https://wa.me/your-number";
+const WA_LINK = "'https://wa.me/558531989550?text=Ol%C3%A1!%20Quero%20contratar%20a%20Siga%20Fibra!'";
 
 // ─── Plans ────────────────────────────────────────────────────────────────────
 const PLANS = [

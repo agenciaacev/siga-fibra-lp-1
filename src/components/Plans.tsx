@@ -52,7 +52,7 @@ const plans = [
   { name: "Siga Hiper Max+", speed: "3",    unit: "Gb", upload: "3",   priceDisc: 199.90, priceFull: 219.90, popular: false },
 ];
 
-const WPP_NUMBER = "5585999999999";
+const WPP_NUMBER = "558531989550";
 const GRADIENT   = "linear-gradient(135deg, #00c2c7 0%, #3ecf8e 100%)";
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
@@ -376,7 +376,7 @@ export default function Plans() {
             Nossos planos de fibra
           </h2>
           <p className="text-[#575756] text-base max-w-lg mx-auto">
-            Pague antes do vencimento e garanta o desconto. Após o vencimento,
+            Pague até do vencimento e garanta o desconto. Após o vencimento,
             o valor retorna ao preço padrão.
           </p>
         </div>
