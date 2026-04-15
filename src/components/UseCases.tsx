@@ -1,9 +1,18 @@
+//@ts-ignore
+import iconFilme from "../assets/assistir-filme.png";
+//@ts-ignore
+import iconTrabalho from "../assets/work-from-home.png";
+//@ts-ignore
+import iconJogo from "../assets/game-controller.png";
+//@ts-ignore
+import iconCelular from "../assets/smartphones.png";
+
 const useCases = [
-  { icon: '🎬', label: 'Assistir Netflix e YouTube sem travar' },
-  { icon: '💼', label: 'Trabalhar e estudar online' },
-  { icon: '🎮', label: 'Jogar sem lag' },
-  { icon: '📱', label: 'Usar vários celulares ao mesmo tempo' },
-]
+  { icon: iconFilme, label: "Assistir Netflix e YouTube sem travar" },
+  { icon: iconTrabalho, label: "Trabalhar e estudar online" },
+  { icon: iconJogo, label: "Jogar sem lag" },
+  { icon: iconCelular, label: "Usar vários celulares ao mesmo tempo" },
+];
 
 export default function UseCases() {
   return (
@@ -11,7 +20,6 @@ export default function UseCases() {
       <div className="max-w-6xl mx-auto px-6">
 
         <div className="bg-gradient-to-br from-teal to-[#00B896] rounded-4xl p-10 md:p-14 relative overflow-hidden">
-          {/* Decorative circles */}
           <div className="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-white/10 pointer-events-none" />
           <div className="absolute -bottom-10 -left-10 w-44 h-44 rounded-full bg-white/8 pointer-events-none" />
 
@@ -35,7 +43,7 @@ export default function UseCases() {
                   key={label}
                   className="bg-white/15 hover:bg-white/25 backdrop-blur-sm rounded-2xl px-5 py-4 flex items-center gap-3 transition-all"
                 >
-                  <span className="text-2xl">{icon}</span>
+                  <img src={icon} alt="" className="w-8 h-8 object-contain flex-shrink-0" />
                   <span className="text-white font-700 text-sm leading-tight">{label}</span>
                 </div>
               ))}
@@ -45,5 +53,5 @@ export default function UseCases() {
 
       </div>
     </section>
-  )
+  );
 }
