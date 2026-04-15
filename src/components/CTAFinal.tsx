@@ -32,7 +32,7 @@ export default function CTAFinal() {
           🚀 Comece hoje mesmo
         </span>
 
-        <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-tight mb-5">
+        <h2 className="text-4xl md:text-4xl font-black text-white tracking-tight leading-tight mb-5">
           Chega de sofrer com internet ruim
         </h2>
 
