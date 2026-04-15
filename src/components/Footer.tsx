@@ -103,7 +103,7 @@ export default function Footer() {
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row justify-between gap-3 text-xs text-white/40">
           <span>
             SIGA FIBRA LTDA — CNPJ: 16.577.060/0001-01 | Rua Gonçalves Ledo,
-            2848 — Fortaleza-CE
+            2846 — Fortaleza-CE
           </span>
           <span>©2025 SIGA FIBRA — Todos os direitos reservados.</span>
         </div>
