@@ -46,7 +46,7 @@ const CATEGORY_LABELS: Record<Category, string> = {
 const plans = [
   { name: "Siga Nitro",      speed: "600",  unit: "Mb", upload: "300", priceDisc: 84.90,  priceFull: 104.90, popular: false },
   { name: "Siga Nitro",      speed: "800",  unit: "Mb", upload: "400", priceDisc: 99.90,  priceFull: 119.90, popular: true  },
-  { name: "Siga Nitro",      speed: "1000", unit: "Mb", upload: "500", priceDisc: 109.90, priceFull: 129.90, popular: false },
+  { name: "Siga Nitro",      speed: "1", unit: "Gb", upload: "500", priceDisc: 109.90, priceFull: 129.90, popular: false },
   { name: "Siga Hiper Flow", speed: "2",    unit: "Gb", upload: "2",   priceDisc: 159.90, priceFull: 179.90, popular: false },
   { name: "Siga Hiper Max",  speed: "3",    unit: "Gb", upload: "3",   priceDisc: 199.90, priceFull: 219.90, popular: false },
   { name: "Siga Hiper Max+", speed: "3",    unit: "Gb", upload: "3",   priceDisc: 199.90, priceFull: 219.90, popular: false },

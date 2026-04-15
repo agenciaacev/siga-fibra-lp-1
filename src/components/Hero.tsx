@@ -7,8 +7,8 @@ const WA_LINK = "https://wa.me/558531989550?text=Ol%C3%A1!%20Quero%20contratar%2
 // ─── Plans ────────────────────────────────────────────────────────────────────
 const PLANS = [
   {
-    value: "1000",
-    unit: "Mb",
+    value: "1",
+    unit: "Gb",
     label: "na sua casa, de verdade",
     gradient: "linear-gradient(135deg, #00C9A7 0%, #00C4C0 55%, #00DEDE 100%)",
     shadow: "0 40px 80px rgba(0,196,192,0.45)",
