@@ -31,10 +31,10 @@ import primeImg     from "../assets/prime-video.png";
 
 const PLATFORMS: Platform[] = [
   { id: "deezer",    name: "Deezer",       category: "standard", price: 9.90,  src: deezerImg    },
-  { id: "globoplay", name: "Globoplay",    category: "standard", price: 9.90,  src: globoplayImg },
-  { id: "disney",   name: "Disney+",      category: "top",      price: 29.90, src: disneyImg    },
-  { id: "prime",    name: "Prime Video",  category: "top",      price: 29.90, src: primeImg     },
-  { id: "hbo",      name: "HBO Max",      category: "premium",  price: 46.90, src: hboImg       },
+  { id: "globoplay", name: "Globoplay",    category: "standard", price: 29.90,  src: globoplayImg },
+  { id: "disney",    name: "Disney+",      category: "top",      price: 29.90, src: disneyImg    },
+  { id: "prime",     name: "Prime Video",  category: "top",      price: 29.90, src: primeImg     },
+  { id: "hbo",       name: "HBO Max",      category: "premium",  price: 29.90, src: hboImg       },
 ];
 
 const CATEGORY_LABELS: Record<Category, string> = {
@@ -43,17 +43,33 @@ const CATEGORY_LABELS: Record<Category, string> = {
   premium: "Premium",
 };
 
+// ─── "Siga Hiper Max+" removido ───────────────────────────────────────────────
+// Upload do plano 1Gb corrigido de "500" (que aparecia como 500Gb) para "500Mb"
 const plans = [
-  { name: "Siga Nitro",      speed: "600",  unit: "Mb", upload: "300", priceDisc: 84.90,  priceFull: 104.90, popular: false },
-  { name: "Siga Nitro",      speed: "800",  unit: "Mb", upload: "400", priceDisc: 99.90,  priceFull: 119.90, popular: true  },
-  { name: "Siga Nitro",      speed: "1", unit: "Gb", upload: "500", priceDisc: 109.90, priceFull: 129.90, popular: false },
-  { name: "Siga Hiper Flow", speed: "2",    unit: "Gb", upload: "2",   priceDisc: 159.90, priceFull: 179.90, popular: false },
-  { name: "Siga Hiper Max",  speed: "3",    unit: "Gb", upload: "3",   priceDisc: 199.90, priceFull: 219.90, popular: false },
-  { name: "Siga Hiper Max+", speed: "3",    unit: "Gb", upload: "3",   priceDisc: 199.90, priceFull: 219.90, popular: false },
+  { name: "Siga Nitro",      speed: "600", unit: "Mb", upload: "300Mb", priceDisc: 84.90,  priceFull: 104.90, popular: false },
+  { name: "Siga Nitro",      speed: "800", unit: "Mb", upload: "400Mb", priceDisc: 99.90,  priceFull: 119.90, popular: true  },
+  { name: "Siga Nitro",      speed: "1",   unit: "Gb", upload: "500Mb", priceDisc: 109.90, priceFull: 129.90, popular: false },
+  { name: "Siga Hiper Flow", speed: "2",   unit: "Gb", upload: "2Gb",   priceDisc: 159.90, priceFull: 179.90, popular: false },
+  { name: "Siga Hiper Max",  speed: "3",   unit: "Gb", upload: "3Gb",   priceDisc: 199.90, priceFull: 219.90, popular: false },
 ];
 
 const WPP_NUMBER = "558531989550";
 const GRADIENT   = "linear-gradient(135deg, #00c2c7 0%, #3ecf8e 100%)";
+
+// ─── CSS do shimmer injetado uma vez ──────────────────────────────────────────
+// Adicione isso no seu CSS global (ex: index.css ou App.css):
+//
+// @keyframes shimmer {
+//   0%   { background-position: 0%   50%; }
+//   50%  { background-position: 100% 50%; }
+//   100% { background-position: 0%   50%; }
+// }
+//
+// .btn-shimmer {
+//   background: linear-gradient(135deg, #00c2c7 0%, #3ecf8e 50%, #00a8b0 100%);
+//   background-size: 200% 200%;
+//   animation: shimmer 2.5s ease infinite;
+// }
 
 // ─── Helpers ───────────────────────────────────────────────────────────────────
 function formatPrice(value: number): string {
@@ -112,33 +128,17 @@ function BackgroundDecor() {
           <circle cx="1" cy="1" r="1.2" fill="#a8d9c8" opacity="0.7" />
         </pattern>
       </defs>
-
-      {/* base de pontos */}
       <rect width="100%" height="100%" fill="url(#plans-dots)" />
-
-      {/* blobs suaves nos cantos */}
       <ellipse cx="92%" cy="4%" rx="260" ry="210" fill="#b8e8d8" opacity="0.55" />
       <ellipse cx="8%"  cy="96%" rx="210" ry="170" fill="#b8e8d8" opacity="0.5" />
-
-      {/* blob branco difuso no centro para respirar */}
       <ellipse cx="50%" cy="50%" rx="340" ry="200" fill="#e8f8f2" opacity="0.4" />
-
-      {/* arcos concentricos direita */}
       <circle cx="93%" cy="0"   r="200" fill="none" stroke="#9dd5be" strokeWidth="1"   opacity="0.55" />
       <circle cx="93%" cy="0"   r="270" fill="none" stroke="#9dd5be" strokeWidth="0.6" opacity="0.35" />
       <circle cx="93%" cy="0"   r="340" fill="none" stroke="#9dd5be" strokeWidth="0.4" opacity="0.2"  />
-
-      {/* arcos concentricos esquerda-baixo */}
       <circle cx="5%"  cy="100%" r="170" fill="none" stroke="#9dd5be" strokeWidth="1"   opacity="0.55" />
       <circle cx="5%"  cy="100%" r="240" fill="none" stroke="#9dd5be" strokeWidth="0.6" opacity="0.3"  />
-
-      {/* highlight cyan topo direito */}
       <ellipse cx="88%" cy="0" rx="200" ry="100" fill="#00c2c7" opacity="0.07" />
-
-      {/* linha diagonal sutil */}
       <line x1="0" y1="68%" x2="100%" y2="22%" stroke="#9dd5be" strokeWidth="0.5" opacity="0.4" />
-
-      {/* formas geométricas flutuantes */}
       <rect x="76%" y="62%" width="38" height="38" rx="6"
         fill="none" stroke="#00c2c7" strokeWidth="1" opacity="0.3"
         transform="rotate(18 76% 62%)" />
@@ -265,8 +265,9 @@ function PlanCard({ plan }: { plan: typeof plans[0] }) {
           {plan.speed}
           <span className="text-[20px] font-bold">{plan.unit}</span>
         </p>
+        {/* Upload agora exibe o valor completo (ex: "500Mb") sem concatenar unit */}
         <p className="text-white/65 text-xs mt-1">
-          Download / {plan.upload}{plan.unit} Upload
+          Download / {plan.upload} Upload
         </p>
         <span className="absolute bottom-3 right-4 text-[11px] font-extrabold tracking-[.15em] text-white/40 uppercase">
           SIGA
@@ -326,6 +327,12 @@ function PlanCard({ plan }: { plan: typeof plans[0] }) {
             ))}
           </div>
 
+          {/* ── Legenda: plataformas de vídeo são com anúncio ── */}
+          <p className="mt-2 text-[8.5px] text-[#9ab5aa] italic leading-relaxed flex items-center gap-1">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-[#b0cfc5] flex-shrink-0" />
+            Os serviços de vídeo (Globoplay, Disney+, Prime Video e HBO Max) são versões com anúncios.
+          </p>
+
           <MorePlatformsBanner />
 
           {hasSelection && (
@@ -343,11 +350,10 @@ function PlanCard({ plan }: { plan: typeof plans[0] }) {
           )}
         </div>
 
-        {/* CTA */}
+        {/* ── CTA com efeito shimmer ── */}
         <button
           onClick={handleAssinar}
-          className="mt-auto w-full text-white font-extrabold text-[14px] tracking-wide rounded-[14px] py-[14px] transition-opacity hover:opacity-90 active:opacity-80 cursor-pointer border-0"
-          style={{ background: GRADIENT }}
+          className="mt-auto w-full text-white font-extrabold text-[14px] tracking-wide rounded-[14px] py-[14px] cursor-pointer border-0 hover:opacity-90 active:opacity-80 btn-shimmer"
         >
           Assinar agora
         </button>
@@ -358,6 +364,9 @@ function PlanCard({ plan }: { plan: typeof plans[0] }) {
 
 // ─── Seção principal ───────────────────────────────────────────────────────────
 export default function Plans() {
+  const plansRow1 = plans.slice(0, 3);
+  const plansRow2 = plans.slice(3);
+
   return (
     <section
       id="planos"
@@ -372,7 +381,7 @@ export default function Plans() {
           <p className="inline-block bg-[#d4f0e0] text-[#0f6e56] text-xs font-semibold tracking-widest uppercase px-5 py-2 rounded-full mb-5">
             Conecte-se
           </p>
-          <h2 className="text-3xl md:text-4xl font-black text-[#575756]mb-3">
+          <h2 className="text-3xl md:text-4xl font-black text-[#575756] mb-3">
             Nossos planos de fibra
           </h2>
           <p className="text-[#575756] text-base max-w-lg mx-auto">
@@ -381,9 +390,17 @@ export default function Plans() {
           </p>
         </div>
 
+        {/* Linha 1 — 3 cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {plans.map((plan, i) => (
+          {plansRow1.map((plan, i) => (
             <PlanCard key={i} plan={plan} />
+          ))}
+        </div>
+
+        {/* Linha 2 — 2 cards centralizados */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-2xl mx-auto mt-5">
+          {plansRow2.map((plan, i) => (
+            <PlanCard key={i + 3} plan={plan} />
           ))}
         </div>
       </div>
