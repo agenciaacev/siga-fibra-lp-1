@@ -284,7 +284,7 @@ function PlanCard({ plan }: { plan: typeof plans[0] }) {
           </p>
           <div className="flex items-baseline gap-1 mt-1">
             <span className="text-[13px] font-bold text-[#1a2e26]">R$</span>
-            <span className="text-[34px] font-black text-[#1a2e26] leading-none">
+            <span className="text-[50px] font-black text-[#1a2e26] leading-none">
               {formatPrice(totalDisc).split(",")[0]}
             </span>
             <span className="text-[16px] font-bold text-[#1a2e26]">
