@@ -203,7 +203,7 @@ function MorePlatformsBanner() {
         </div>
         <div className="text-left">
           <p className="text-[10px] font-extrabold text-[#0F6E56] leading-tight">
-            +20 plataformas disponíveis
+            +25 plataformas disponíveis
           </p>
           <p className="text-[9px] text-[#7a9a8e] leading-tight">
             Filmes, séries, música e muito mais
