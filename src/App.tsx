@@ -9,6 +9,7 @@ import CTAFinal from './components/CTAFinal'
 import Footer from './components/Footer'
 import WhatsAppFAB from './components/WhatsAppFAB'
 import Plans from './components/Plans'
+import SEO from './components/SEO'
 
 export const WA_LINK =
   'https://wa.me/558531989550?text=Ol%C3%A1!%20Quero%20contratar%20a%20Siga%20Fibra!'
@@ -16,6 +17,7 @@ export const WA_LINK =
 function App() {
   return (
     <div className="min-h-screen font-DM">
+      <SEO />
       <Navbar />
       <Hero />
       <Plans/>
