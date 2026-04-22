@@ -1,3 +1,6 @@
+//@ts-ignore
+import imgFibra from '../assets/img-fibra.png'
+
 const solutionItems = [
   {
     title: 'Mais Velocidade',
@@ -60,91 +63,15 @@ export default function Solution() {
           </div>
         </div>
 
-        {/* Right: Visual comparison */}
-        <div className="flex flex-col gap-3 self-start mt-10" >
-
-          {/* Internet comum */}
-          <div className="bg-bg rounded-2xl px-5 py-4 border border-red-100">
-            <p className="text-red-400 font-800 text-xs uppercase tracking-widest mb-3">
-              ✕ Internet Comum
-            </p>
-            <div className="space-y-2 mb-4">
-              {[
-                { label: 'Estabilidade', pct: 30 },
-                { label: 'Velocidade', pct: 40 },
-                { label: 'Múltiplos devices', pct: 30 },
-              ].map(({ label, pct }) => (
-                <div key={label}>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-muted text-xs font-700">{label}</span>
-                    <span className="text-red-400 text-xs font-800">{pct}%</span>
-                  </div>
-                  <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
-                    <div className="h-full bg-red-200 rounded-full" style={{ width: `${pct}%` }} />
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="grid grid-cols-2 gap-2">
-              {[
-                { value: '+10x', desc: 'mais quedas por mês' },
-                { value: '~40%', desc: 'da velocidade contratada entregue' },
-                { value: 'Alta', desc: 'interferência por distância' },
-                { value: 'Ruim', desc: 'desempenho com 4+ devices' },
-              ].map(({ value, desc }) => (
-                <div key={value} className="bg-white rounded-xl px-3 py-2.5">
-                  <p className="text-red-400 font-800 text-base mb-0.5">{value}</p>
-                  <p className="text-muted text-xs leading-snug">{desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Siga Fibra */}
-          <div className="bg-teal-light rounded-2xl px-5 py-4 border border-teal/20">
-            <p className="text-teal-dark font-800 text-xs uppercase tracking-widest mb-3">
-              ✓ Siga Fibra — Fibra Óptica
-            </p>
-            <div className="space-y-2 mb-4">
-              {[
-                { label: 'Estabilidade', pct: 100 },
-                { label: 'Velocidade', pct: 100 },
-                { label: 'Múltiplos devices', pct: 100 },
-              ].map(({ label, pct }) => (
-                <div key={label}>
-                  <div className="flex justify-between mb-1">
-                    <span className="text-teal-darker text-xs font-700">{label}</span>
-                    <span className="text-teal-dark text-xs font-800">{pct}%</span>
-                  </div>
-                  <div className="h-1.5 bg-teal/20 rounded-full overflow-hidden">
-                    <div className="h-full bg-teal rounded-full" style={{ width: `${pct}%` }} />
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="grid grid-cols-2 gap-2">
-              {[
-                { value: '100%', desc: 'de uptime garantido por mês' },
-                { value: '100%', desc: 'da velocidade contratada entregue' },
-                { value: 'Zero', desc: 'interferência por distância' },
-                { value: 'Ótimo', desc: 'desempenho com 10+ devices' },
-              ].map(({ value, desc }) => (
-                <div key={value} className="bg-white/60 rounded-xl px-3 py-2.5">
-                  <p className="text-teal-dark font-800 text-base mb-0.5">{value}</p>
-                  <p className="text-teal-darker text-xs leading-snug">{desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Bottom note */}
-          {/* <div className="bg-gradient-to-r from-teal to-[#00E0C0] rounded-2xl px-5 py-3 text-white text-center">
-            <p className="font-800 text-sm">
-              É ideal para trabalho, estudo, streaming e jogos. Tudo ao mesmo tempo.
-            </p>
-          </div> */}
-
+        {/* Right: Image */}
+        <div className="flex items-center justify-center h-full min-h-[400px] md:min-h-[600px] bg-gray-100 rounded-lg overflow-hidden">
+          <img 
+            src={imgFibra}
+            alt="Fibra Óptica Siga" 
+            className="w-full h-full object-cover"
+          />
         </div>
+        
       </div>
     </section>
   )
