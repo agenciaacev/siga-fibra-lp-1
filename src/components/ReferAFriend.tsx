@@ -1,4 +1,5 @@
 import { useState } from "react";
+import amigoIndicaForm from "../assets/regulamentoAmigoIndica.pdf"
 
 type FormData = {
   // Quem indica (cliente atual)
@@ -13,11 +14,11 @@ type FormData = {
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/SEU_SCRIPT_ID/exec";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx2p3O7Z8-E1QlnMH5bLDHtqxJlsJJb9pMcbs3O2DWSVsnrYCZCKEUD7nUUonDhQcF4/execIIIII";
 
 function maskPhone(value: string) {
   return value
-    .replace(/\D/g, "")
+    .replace(/\D/g, "") 
     .replace(/^(\d{2})(\d)/, "($1) $2")
     .replace(/(\d{5})(\d{1,4})$/, "$1-$2")
     .slice(0, 15);
@@ -154,11 +155,11 @@ export default function AmigoIndica() {
         <div className="text-center mb-4">
           <h2 className="text-3xl md:text-4xl font-bold text-[#0F2E24] leading-tight">
             Indique um amigo e{" "}
-            <span className="text-[#00B37E]">ganhe desconto</span>
+            <span className="text-[#00B37E]">ganhe desconto de 100%</span>
           </h2>
           <p className="text-[#6B7C75] mt-3 text-base max-w-xl mx-auto leading-relaxed">
             Compartilhe a internet que funciona de verdade. Seu amigo assina e
-            você recebe um desconto especial na sua fatura.
+            você recebe um desconto de 100% na sua fatura.
           </p>
         </div>
 
@@ -167,7 +168,7 @@ export default function AmigoIndica() {
           {[
             { num: "01", label: "Preencha o formulário" },
             { num: "02", label: "Seu amigo assina" },
-            { num: "03", label: "Você ganha desconto" },
+            { num: "03", label: "Você ganha o desconto" },
           ].map((step, i) => (
             <div key={step.num} className="flex items-center gap-2 sm:gap-0">
               <div className="flex items-center gap-3">
@@ -182,6 +183,18 @@ export default function AmigoIndica() {
             </div>
           ))}
         </div>
+
+        {/* Texto para download do PDF */}
+        <p className="text-center text-sm text-[#6B7C75] mt-4 mb-8">
+          Quer saber mais sobre como funciona esse benefício?{" "}
+          <a
+            href={amigoIndicaForm}
+            download
+            className="text-[#00B37E] underline hover:text-[#009E6E] transition-colors"
+          >
+            Clique aqui para saber mais
+          </a>
+        </p>
 
         {/* Card do formulário */}
         <div className="bg-white rounded-3xl shadow-[0_4px_40px_rgba(0,179,126,0.08)] border border-[#E8F5F0] overflow-hidden">
