@@ -10,6 +10,7 @@ import Footer from './components/Footer'
 import WhatsAppFAB from './components/WhatsAppFAB'
 import Plans from './components/Plans'
 import SEO from './components/SEO'
+import ReferAFrind from './components/ReferAFriend'
 
 export const WA_LINK =
   'https://wa.me/558531989550?text=Ol%C3%A1!%20Quero%20contratar%20a%20Siga%20Fibra!'
@@ -25,6 +26,7 @@ function App() {
       <Solution />
       <Benefits />
       <UseCases />
+      <ReferAFrind />
       <FAQ />
       <CTAFinal />
       <Footer />

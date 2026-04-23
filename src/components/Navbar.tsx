@@ -35,6 +35,7 @@ export default function Navbar() {
           {[
             { label: "Planos", href: "#planos" },
             { label: "Por que a Siga?", href: "#porque-siga" },
+            { label: "Amigo Indica", href: "#amigo-indica" },
             { label: "Dúvidas", href: "#faq" },
           ].map(({ label, href }) => (
             <li key={label}>
