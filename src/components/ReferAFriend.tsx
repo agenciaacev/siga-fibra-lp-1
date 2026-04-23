@@ -153,7 +153,7 @@ export default function AmigoIndica() {
 
         {/* Heading */}
         <div className="text-center mb-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0F2E24] leading-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#575756] leading-tight">
             Indique um amigo e{" "}
             <span className="text-[#00B37E]">ganhe desconto de 100%</span>
           </h2>
@@ -212,7 +212,7 @@ export default function AmigoIndica() {
                 </div>
                 <div>
                   <p className="text-xs text-[#00B37E] font-semibold uppercase tracking-wider">Seus dados</p>
-                  <h3 className="text-base font-bold text-[#0F2E24]">Quem está indicando</h3>
+                  <h3 className="text-base font-bold text-[#575756]">Quem está indicando</h3>
                 </div>
               </div>
 
@@ -264,7 +264,7 @@ export default function AmigoIndica() {
                 </div>
                 <div>
                   <p className="text-xs text-[#00B37E] font-semibold uppercase tracking-wider">Dados do amigo</p>
-                  <h3 className="text-base font-bold text-[#0F2E24]">Quem está sendo indicado</h3>
+                  <h3 className="text-base font-bold text-[#575756]">Quem está sendo indicado</h3>
                 </div>
               </div>
 
