@@ -14,7 +14,7 @@ type FormData = {
 
 type FormStatus = "idle" | "loading" | "success" | "error";
 
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx2p3O7Z8-E1QlnMH5bLDHtqxJlsJJb9pMcbs3O2DWSVsnrYCZCKEUD7nUUonDhQcF4/execIIIII";
+const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx2p3O7Z8-E1QlnMH5bLDHtqxJlsJJb9pMcbs3O2DWSVsnrYCZCKEUD7nUUonDhQcF4/exec";
 
 function maskPhone(value: string) {
   return value
