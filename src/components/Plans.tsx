@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 // ─── Tipos ─────────────────────────────────────────────────────────────────────
-type Category = "standard" | "top" | "premium";
+type Category = "standard" | "top" | "premium" | "advanced";
 
 interface Platform {
   id: string;
@@ -15,6 +15,7 @@ interface SelectedPlatforms {
   standard: Platform | null;
   top: Platform | null;
   premium: Platform | null;
+  advanced: Platform | null;
 }
 
 // ─── Imports de imagens ────────────────────────────────────────────────────────
@@ -31,16 +32,17 @@ import primeImg     from "../assets/prime-video.png";
 
 const PLATFORMS: Platform[] = [
   { id: "deezer",    name: "Deezer",       category: "standard", price: 9.90,  src: deezerImg    },
-  { id: "globoplay", name: "Globoplay",    category: "standard", price: 29.90,  src: globoplayImg },
+  { id: "globoplay", name: "Globoplay",    category: "advanced", price: 14.90, src: globoplayImg },
   { id: "disney",    name: "Disney+",      category: "top",      price: 29.90, src: disneyImg    },
   { id: "prime",     name: "Prime Video",  category: "top",      price: 29.90, src: primeImg     },
-  { id: "hbo",       name: "HBO Max",      category: "premium",  price: 29.90, src: hboImg       },
+  { id: "hbo",       name: "HBO Max",      category: "top",      price: 29.90, src: hboImg       },
 ];
 
 const CATEGORY_LABELS: Record<Category, string> = {
   standard: "Standard",
   top: "Top",
   premium: "Premium",
+  advanced: "Advanced",
 };
 
 // ─── "Siga Hiper Max+" removido ───────────────────────────────────────────────
@@ -79,17 +81,19 @@ function formatPrice(value: number): string {
 function calcTotal(base: number, selected: SelectedPlatforms): number {
   return (
     base +
-    (selected.standard?.price ?? 0) +
-    (selected.top?.price      ?? 0) +
-    (selected.premium?.price  ?? 0)
+    (selected.standard?.price  ?? 0) +
+    (selected.top?.price       ?? 0) +
+    (selected.premium?.price   ?? 0) +
+    (selected.advanced?.price  ?? 0)
   );
 }
 
 function calcPlatformsExtra(selected: SelectedPlatforms): number {
   return (
-    (selected.standard?.price ?? 0) +
-    (selected.top?.price      ?? 0) +
-    (selected.premium?.price  ?? 0)
+    (selected.standard?.price  ?? 0) +
+    (selected.top?.price       ?? 0) +
+    (selected.premium?.price   ?? 0) +
+    (selected.advanced?.price  ?? 0)
   );
 }
 
@@ -98,7 +102,7 @@ function buildWhatsAppMessage(
   total: number,
   selected: SelectedPlatforms
 ): string {
-  const plats = (["standard", "top", "premium"] as Category[])
+  const plats = (["standard", "top", "premium", "advanced"] as Category[])
     .map((cat) => {
       const p = selected[cat];
       return p ? `${p.name} (${CATEGORY_LABELS[cat]})` : null;
@@ -220,6 +224,7 @@ function PlanCard({ plan }: { plan: typeof plans[0] }) {
     standard: null,
     top: null,
     premium: null,
+    advanced: null,
   });
 
   const extra      = calcPlatformsExtra(selected);
@@ -338,7 +343,7 @@ function PlanCard({ plan }: { plan: typeof plans[0] }) {
           {hasSelection && (
             <div className="mt-2 flex items-center justify-between bg-[#f0faf7] rounded-[8px] px-3 py-2">
               <span className="text-[10px] text-[#5a7a6e]">
-                {(["standard", "top", "premium"] as Category[])
+                {(["standard", "top", "premium", "advanced"] as Category[])
                   .filter((cat) => selected[cat])
                   .map((cat) => selected[cat]!.name)
                   .join(" + ")}
