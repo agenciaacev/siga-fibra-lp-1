@@ -52,7 +52,7 @@ const plans = [
   { name: "Siga Nitro",      speed: "800", unit: "Mb", upload: "400Mb", priceDisc: 99.90,  priceFull: 119.90, popular: true  },
   { name: "Siga Nitro",      speed: "1",   unit: "Gb", upload: "500Mb", priceDisc: 109.90, priceFull: 129.90, popular: false },
   { name: "Siga Hiper Flow", speed: "2",   unit: "Gb", upload: "2Gb",   priceDisc: 159.90, priceFull: 179.90, popular: false },
-  { name: "Siga Hiper Max",  speed: "3",   unit: "Gb", upload: "3Gb",   priceDisc: 199.90, priceFull: 219.90, popular: false },
+  { name: "Siga Hiper Max",  speed: "2.5",   unit: "Gb", upload: "2.5Gb",   priceDisc: 199.90, priceFull: 219.90, popular: false },
 ];
 
 const WPP_NUMBER = "558531989550";
