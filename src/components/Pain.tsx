@@ -65,6 +65,7 @@ export default function Pain() {
                 <img
                   src={image}
                   alt={alt}
+                  loading="lazy"
                   className="w-20 h-20 object-contain drop-shadow-md"
                 />
               </div>

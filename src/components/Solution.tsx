@@ -65,9 +65,10 @@ export default function Solution() {
 
         {/* Right: Image */}
         <div className="flex items-center justify-center h-full min-h-[400px] md:min-h-[600px] bg-gray-100 rounded-lg overflow-hidden">
-          <img 
+          <img
             src={imgFibra}
-            alt="Fibra Óptica Siga" 
+            alt="Fibra Óptica Siga"
+            loading="lazy"
             className="w-full h-full object-cover"
           />
         </div>

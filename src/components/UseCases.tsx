@@ -43,7 +43,7 @@ export default function UseCases() {
                   key={label}
                   className="bg-white/15 hover:bg-white/25 backdrop-blur-sm rounded-2xl px-5 py-4 flex items-center gap-3 transition-all"
                 >
-                  <img src={icon} alt="" className="w-8 h-8 object-contain flex-shrink-0" />
+                  <img src={icon} alt="" loading="lazy" className="w-8 h-8 object-contain flex-shrink-0" />
                   <span className="text-white font-700 text-sm leading-tight">{label}</span>
                 </div>
               ))}

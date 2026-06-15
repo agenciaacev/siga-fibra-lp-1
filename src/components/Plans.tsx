@@ -179,6 +179,7 @@ function PlatformButton({
       <img
         src={platform.src}
         alt={platform.name}
+        loading="lazy"
         className="w-full h-full object-cover"
       />
       {isSelected && (

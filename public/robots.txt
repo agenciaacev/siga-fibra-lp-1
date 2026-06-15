@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /wp-admin
+Disallow: /wp-login.php
+Disallow: /xmlrpc.php
+Disallow: /.env
+Disallow: /admin
+Disallow: /login
+Disallow: /phpmyadmin
+Disallow: /config
+Allow: /

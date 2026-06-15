@@ -45,6 +45,7 @@ export default function Footer() {
             <img
               src={logo}
               alt="Siga Fibra"
+              loading="lazy"
               className="h-auto w-[clamp(70px,20vw,90px)]"
             />
             <p className="leading-relaxed text-sm">

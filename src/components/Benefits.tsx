@@ -66,11 +66,11 @@ export default function Benefits() {
               </span>
 
               <div className="w-[52px] h-[52px] rounded-2xl bg-gradient-to-br from-[#d4f0e0] to-[#b9e8d4] flex items-center justify-center mb-5">
-                <img src={logo} alt="Siga Fibra" className="w-[30px] h-[30px] object-contain" />
+                <img src={logo} alt="Siga Fibra" loading="lazy" className="w-[30px] h-[30px] object-contain" />
               </div>
 
               <div className="absolute bottom-4 right-4 w-9 h-9 opacity-[0.07] pointer-events-none">
-                <img src={logo} alt="" className="w-full h-full object-contain" />
+                <img src={logo} alt="" loading="lazy" className="w-full h-full object-contain" />
               </div>
 
               <h3 className="font-extrabold text-[#575756] text-[15px] mb-2">{title}</h3>
