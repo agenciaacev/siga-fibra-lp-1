@@ -387,7 +387,7 @@ export default function Plans() {
             Conecte-se
           </p>
           <h2 className="text-3xl md:text-4xl font-black text-[#575756] mb-3">
-            Nossos planos de fibra
+            Nossos planos <span className="text-[#0f6e56]">residenciais</span> de fibra
           </h2>
           <p className="text-[#575756] text-base max-w-lg mx-auto">
             Pague até do vencimento e garanta o desconto. Após o vencimento,
