@@ -392,7 +392,7 @@ export default function Plans() {
           </h2>
           <p className="text-[#575756] text-base max-w-lg mx-auto">
             Pague até do vencimento e garanta o desconto. Após o vencimento,
-            o valor retorna ao preço.
+            o valor retorna ao preço padrão.
           </p>
         </div>
 
