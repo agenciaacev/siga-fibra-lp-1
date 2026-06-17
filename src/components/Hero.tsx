@@ -70,29 +70,32 @@ function SpeedCard3D() {
 
   // Auto-cycle every 3.5s
   useEffect(() => {
+    let swapTimeout: ReturnType<typeof setTimeout>;
+    let doneTimeout: ReturnType<typeof setTimeout>;
+
     const id = setInterval(() => {
+      clearTimeout(swapTimeout);
+      clearTimeout(doneTimeout);
+
       setIsAnimating(true);
       setAnimRotateY(90);
 
-      // Mid-flip: swap content
-      const swapTimeout = setTimeout(() => {
+      swapTimeout = setTimeout(() => {
         setPlanIndex((i) => (i + 1) % PLANS.length);
         setBarKey((k) => k + 1);
         setAnimRotateY(0);
       }, 360);
 
-      // Done: re-enable hover tilt
-      const doneTimeout = setTimeout(() => {
+      doneTimeout = setTimeout(() => {
         setIsAnimating(false);
       }, 760);
-
-      return () => {
-        clearTimeout(swapTimeout);
-        clearTimeout(doneTimeout);
-      };
     }, 3500);
 
-    return () => clearInterval(id);
+    return () => {
+      clearInterval(id);
+      clearTimeout(swapTimeout);
+      clearTimeout(doneTimeout);
+    };
   }, []);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
