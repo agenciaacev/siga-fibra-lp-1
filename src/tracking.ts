@@ -1,4 +1,4 @@
-const API_URL = 'http://143.95.214.125:3002'
+const API_URL = 'https://sigafibra.com'
 
 function detectSource(): { source: string; medium: string; campaign: string } {
   const params = new URLSearchParams(window.location.search)
