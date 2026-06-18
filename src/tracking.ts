@@ -1,8 +1,8 @@
 const API_URL = 'http://143.95.214.125:3002'
 
-// Captura IMEDIATAMENTE ao carregar o módulo, antes de qualquer router processar
-const _initialSearch = typeof window !== 'undefined' ? window.location.search : ''
-const _initialReferrer = typeof document !== 'undefined' ? document.referrer : ''
+// Lê globals gravados pelo inline script do index.html (roda antes de qualquer outro JS)
+const _initialSearch: string = (window as any).__trackSearch ?? window.location.search
+const _initialReferrer: string = (window as any).__trackReferrer ?? document.referrer
 
 interface TrackSource {
   source: string
