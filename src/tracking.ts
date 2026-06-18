@@ -51,6 +51,10 @@ function detectSource(): TrackSource {
 export function trackPageView() {
   const { source, medium, campaign } = detectSource()
 
+  sessionStorage.setItem('sf_source',   source)
+  sessionStorage.setItem('sf_medium',   medium)
+  sessionStorage.setItem('sf_campaign', campaign)
+
   fetch(`${API_URL}/api/track/access`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

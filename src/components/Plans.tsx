@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { trackClick } from '../tracking'
+import { trackButton } from '../utils/trackButton'
 
 // ─── Tipos ─────────────────────────────────────────────────────────────────────
 type Category = "standard" | "top" | "premium" | "advanced";
@@ -245,7 +245,7 @@ function PlanCard({ plan }: { plan: typeof plans[0] }) {
   };
 
   const handleAssinar = () => {
-    trackClick('plan_subscribe', `Assinar Agora - ${plan.name}`)
+    trackButton('plan_subscribe', 'Assinar Agora (Planos)')
     const msg = buildWhatsAppMessage(plan, totalDisc, selected);
     window.open(`https://wa.me/${WPP_NUMBER}?text=${msg}`, "_blank");
   };

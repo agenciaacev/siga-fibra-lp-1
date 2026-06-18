@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { WA_LINK } from "../App";
-import { trackClick } from '../tracking'
+import { trackButton } from '../utils/trackButton'
 //@ts-ignore
 import logo from "../assets/logosiga.png";
 
@@ -55,7 +55,7 @@ export default function Navbar() {
           href={WA_LINK}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => trackClick('navbar_whatsapp', 'Assinar pelo WhatsApp')}
+          onClick={() => trackButton('navbar_whatsapp', 'Assinar pelo WhatsApp (Topo)')}
           className="bg-teal hover:bg-teal-dark text-white font-800 text-sm px-5 py-3 rounded-full transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-teal/30"
         >
           Assinar pelo WhatsApp
