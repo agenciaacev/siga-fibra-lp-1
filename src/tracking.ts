@@ -1,5 +1,9 @@
 const API_URL = 'http://143.95.214.125:3002'
 
+// Captura IMEDIATAMENTE ao carregar o módulo, antes de qualquer router processar
+const _initialSearch = typeof window !== 'undefined' ? window.location.search : ''
+const _initialReferrer = typeof document !== 'undefined' ? document.referrer : ''
+
 interface TrackSource {
   source: string
   medium: string
@@ -7,7 +11,7 @@ interface TrackSource {
 }
 
 function detectSource(): TrackSource {
-  const p = new URLSearchParams(window.location.search)
+  const p = new URLSearchParams(_initialSearch)
 
   if (p.get('gclid') || p.get('gbraid') || p.get('gad_source')) {
     return {
@@ -35,7 +39,7 @@ function detectSource(): TrackSource {
     return { source, medium: p.get('utm_medium') || '', campaign: p.get('utm_campaign') || '' }
   }
 
-  const ref = document.referrer.toLowerCase()
+  const ref = _initialReferrer.toLowerCase()
   if (ref.includes('google.'))                                  return { source: 'organic',    medium: 'organic', campaign: '' }
   if (ref.includes('facebook.') || ref.includes('instagram.')) return { source: 'meta_ads',   medium: 'social',  campaign: '' }
   if (ref.includes('tiktok.'))                                  return { source: 'tiktok_ads', medium: 'social',  campaign: '' }
@@ -55,7 +59,7 @@ export function trackPageView() {
       medium,
       campaign,
       page: window.location.pathname,
-      referrer: document.referrer,
+      referrer: _initialReferrer,
       userAgent: navigator.userAgent,
     }),
   }).catch(() => {})
