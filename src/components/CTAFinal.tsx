@@ -1,4 +1,5 @@
 import { WA_LINK } from '../App'
+import { trackClick } from '../tracking'
 
 export default function CTAFinal() {
   return (
@@ -45,6 +46,7 @@ export default function CTAFinal() {
           href={WA_LINK}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackClick('cta_final', 'Quero Instalar Minha Internet Agora')}
           className="btn-bounce inline-block bg-white text-teal-dark font-900 font-semibold text-lg px-12 py-6 rounded-full active:scale-[0.98]"
         >
           QUERO INSTALAR MINHA INTERNET AGORA
