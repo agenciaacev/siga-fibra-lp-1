@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Pain from './components/Pain'
@@ -11,11 +12,16 @@ import WhatsAppFAB from './components/WhatsAppFAB'
 import Plans from './components/Plans'
 import SEO from './components/SEO'
 import ReferAFrind from './components/ReferAFriend'
+import { trackPageView } from './tracking'
 
 export const WA_LINK =
   'https://wa.me/558531989550?text=Ol%C3%A1!%20Quero%20contratar%20a%20Siga%20Fibra!'
 
 function App() {
+  useEffect(() => {
+    trackPageView()
+  }, [])
+
   return (
     <div className="min-h-screen font-DM">
       <SEO />

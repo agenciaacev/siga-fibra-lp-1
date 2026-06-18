@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { trackClick } from '../tracking'
 
 // Replace with your actual WA_LINK import in your project:
 // import { WA_LINK } from '../App'
@@ -590,6 +591,7 @@ export default function Hero() {
                 href={WA_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackClick('hero_cta', 'Quero Minha Internet Rápida Agora')}
                 className="inline-block text-white text-center font-900 font-semibold text-lg px-10 py-5 rounded-full"
                 style={{
                   background:
