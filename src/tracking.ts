@@ -35,7 +35,7 @@ function detectSource(): TrackSource {
       s.includes('google') ? 'google_ads' :
       s.includes('facebook') || s.includes('instagram') || s.includes('meta') ? 'meta_ads' :
       s.includes('tiktok') ? 'tiktok_ads' :
-      s.includes('twitter') || s.includes('linkedin') ? 'social' : 'other'
+      s.includes('twitter') || s.includes('linkedin') ? 'social' : 'organic'
     return { source, medium: p.get('utm_medium') || '', campaign: p.get('utm_campaign') || '' }
   }
 
