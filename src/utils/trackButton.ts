@@ -1,5 +1,5 @@
 export function trackButton(buttonId: string, label: string) {
-  fetch('http://143.95.214.125:3002/api/track/click', {
+  fetch('/api/track/click', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({

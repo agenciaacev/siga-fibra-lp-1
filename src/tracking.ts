@@ -1,4 +1,4 @@
-const API_URL = 'http://143.95.214.125:3002'
+const API_URL = ''
 
 // Lê globals gravados pelo inline script do index.html (roda antes de qualquer outro JS)
 const _initialSearch: string = (window as any).__trackSearch ?? window.location.search
