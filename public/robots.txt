@@ -1,3 +1,6 @@
+User-agent: meta-externalagent
+Disallow: /
+
 User-agent: *
 Disallow: /wp-admin
 Disallow: /wp-login.php
@@ -7,4 +10,8 @@ Disallow: /admin
 Disallow: /login
 Disallow: /phpmyadmin
 Disallow: /config
+Disallow: /api/
+Disallow: /shop/
 Allow: /
+
+Sitemap: https://sigafibra.com/sitemap.xml
